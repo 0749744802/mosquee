@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashbordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.dashbord');
 });
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/dashbord', [DashbordController::class,'dashbord']);
+Route::get('/ajout_page', [DashbordController::class,'ajout_page']);
 
 
