@@ -14,4 +14,8 @@ class DashbordController extends Controller
     {
         return view('pages.ajout_page');
     }
+    public function liste_page()
+    {
+        return view('pages.liste_page');
+    }
 }
