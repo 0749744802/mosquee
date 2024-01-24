@@ -10,6 +10,13 @@
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset("assets/images/favicon.ico")}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- dropzone css -->
+    <link rel="stylesheet" href="{{asset("assets/libs/dropzone/dropzone.css")}}" type="text/css" />
+
+    <!-- Filepond css -->
+    <link rel="stylesheet" href="{{asset("assets/libs/filepond/filepond.min.css")}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset("assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css")}}">
      <!-- quill css -->
      <link href="{{asset("assets/libs/quill/quill.core.css")}}" rel="stylesheet" type="text/css" />
      <link href="{{asset("assets/libs/quill/quill.bubble.css")}}" rel="stylesheet" type="text/css" />

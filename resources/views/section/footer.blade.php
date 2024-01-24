@@ -979,6 +979,7 @@
 </div>
 
 <!-- JAVASCRIPT -->
+
 <script src="{{asset("assets/libs/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 <script src="{{asset("assets/libs/simplebar/simplebar.min.js")}}"></script>
 <script src="{{asset("assets/libs/node-waves/waves.min.js")}}"></script>
@@ -1016,6 +1017,16 @@
  <!-- init js -->
  <script src="{{asset("assets/js/pages/form-editor.init.js")}}"></script>
 <script src="{{asset("assets/js/app.js")}}"></script>
+<!-- dropzone min -->
+<script src="{{asset("assets/libs/dropzone/dropzone-min.js")}}"></script>
+<!-- filepond js -->
+<script src="{{asset("assets/libs/filepond/filepond.min.js")}}"></script>
+<script src="{{asset("assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js")}}"></script>
+<script src="{{asset("assets/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js")}}"></script>
+<script src="{{asset("assets/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js")}}"></script>
+<script src="{{asset("assets/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js")}}"></script>
+
+<script src="{{asset("assets/js/pages/form-file-upload.init.js")}}"></script>
 </body>
 
 </html>

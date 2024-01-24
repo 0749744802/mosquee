@@ -19,5 +19,8 @@ Route::get('/', function () {
 });
 Route::get('/dashbord', [DashbordController::class,'dashbord']);
 Route::get('/ajout_page', [DashbordController::class,'ajout_page']);
+Route::get('/test', function () {
+    return view('pages.test');
+});
 
 

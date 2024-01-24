@@ -6,11 +6,12 @@
     <div id="layout-wrapper">
 
         <header id="page-topbar">
-   @include('section.top')
+            @include('section.top')
 
-           @include('section.nav')
+            @include('section.nav')
 
-@yield('content')
-@yield('content')
+            @yield('content')
+             
 
-           @include('section.footer')
+
+            @include('section.footer')
