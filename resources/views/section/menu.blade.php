@@ -23,7 +23,7 @@
                     <i class="ri-record-circle-line"></i>
                 </button>
             </div>
-    
+
             <div class="dropdown sidebar-user m-1 rounded">
                 <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="d-flex align-items-center gap-2">
@@ -56,22 +56,22 @@
                     </div>
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
-                       
-                       
-            
-                      
-            
-                        
-            
-                        
-            
-                        
-                      
-            
-                       
-            
-                        
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
                                 <i class="ri-file-list-3-line"></i> <span data-key="">pages</span>
@@ -84,11 +84,11 @@
                                     <li class="nav-item">
                                         <a href="liste_page" class="nav-link" data-key=""> Liste des pages</a>
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                         </li>
-            
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
                                 <i class="ri-layout-grid-line"></i> <span data-key="t-tables">Tables</span>
@@ -110,7 +110,7 @@
                                 </ul>
                             </div>
                         </li>
-            
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCharts">
                                 <i class="ri-pie-chart-line"></i> <span data-key="t-charts">Charts</span>
@@ -201,7 +201,7 @@
                                 </ul>
                             </div>
                         </li>
-            
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarIcons">
                                 <i class="ri-compasses-2-line"></i> <span data-key="t-icons">Icons</span>
@@ -229,7 +229,7 @@
                                 </ul>
                             </div>
                         </li>
-            
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMaps">
                                 <i class="ri-map-pin-line"></i> <span data-key="t-maps">Maps</span>
@@ -254,7 +254,7 @@
                                 </ul>
                             </div>
                         </li>
-            
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarMultilevel" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
                                 <i class="ri-share-line"></i> <span data-key="t-multi-level">Multi Level</span>
@@ -295,7 +295,7 @@
                                 </ul>
                             </div>
                         </li>
-            
+
                     </ul>
                 </div>
                 <!-- Sidebar -->

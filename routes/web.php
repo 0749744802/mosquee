@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\DashbordController;
 
 /*
@@ -20,5 +21,4 @@ Route::get('/', function () {
 Route::get('/dashbord', [DashbordController::class,'dashbord']);
 Route::get('/ajout_page', [DashbordController::class,'ajout_page']);
 Route::get('/liste_page', [DashbordController::class,'liste_page']);
-
-
+Route::post('/store', [StoreController::class,'store'])->name('store');

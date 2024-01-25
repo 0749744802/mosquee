@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class DashbordController extends Controller
@@ -12,10 +13,13 @@ class DashbordController extends Controller
     }
     public function ajout_page()
     {
-        return view('pages.ajout_page');
+        $data=Categorie::get();
+        return view('pages.ajout_page',compact("data"));
     }
     public function liste_page()
     {
-        return view('pages.liste_page');
+        $data=Categorie::get();
+        return view('pages.liste_page',compact("data"));
     }
+
 }

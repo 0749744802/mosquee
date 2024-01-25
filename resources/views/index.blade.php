@@ -15,7 +15,7 @@
      <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
      <!--datatable responsive css-->
      <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
- 
+
      <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
     <!-- dropzone css -->
     <link rel="stylesheet" href="{{asset("assets/libs/dropzone/dropzone.css")}}" type="text/css" />
@@ -54,7 +54,7 @@
     <div id="layout-wrapper">
 
          @include('section.header')
-         @include('pages.modal')
+         
 
 <!-- removeNotificationModal -->
 <div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
@@ -413,7 +413,7 @@
                     <div id="sidebar-visibility">
                         <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Visibility</h6>
                         <p class="text-muted">Choose show or Hidden sidebar.</p>
-                
+
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check card-radio">
@@ -870,7 +870,7 @@
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-01">
                                     <img src="assets/images/sidebar/img-1.jpg" alt="" class="avatar-md w-auto object-fit-cover">
                                 </label>
-                            </div>	
+                            </div>
 
                             <div class="form-check sidebar-setting card-radio">
                                 <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-02" value="img-2">
@@ -920,7 +920,7 @@
                     <div id="preloader-menu">
                         <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Preloader</h6>
                         <p class="text-muted">Choose a preloader.</p>
-                    
+
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
@@ -978,14 +978,14 @@
                                 <h5 class="fs-13 text-center mt-2">Disable</h5>
                             </div>
                         </div>
-                    
+
                     </div>
                     <!-- end preloader-menu -->
 
                     <div id="body-img" style="display: none;">
                         <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Background Image</h6>
                         <p class="text-muted">Choose a body background image.</p>
-                
+
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
@@ -1021,7 +1021,7 @@
                                 <h5 class="fs-13 text-center mt-2">One</h5>
                             </div>
                             <!-- end col -->
-                
+
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
                                     <input class="form-check-input" type="radio" name="data-body-image" id="body-img-two" value="img-2">
@@ -1031,7 +1031,7 @@
                                 <h5 class="fs-13 text-center mt-2">Two</h5>
                             </div>
                             <!-- end col -->
-                
+
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
                                     <input class="form-check-input" type="radio" name="data-body-image" id="body-img-three" value="img-3">
