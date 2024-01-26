@@ -44,21 +44,26 @@
                                         <tr>
                                             <th>Titre</th>
                                             <th>Categorie</th>
-                                            <th>publique</th>
-                                            <th>Date</th>
+                                           
                                             <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Unity Butler</td>
-                                            <td>Marketing Designer</td>
-                                            <td>San Francisco</td>
-                                            <td>47</td>
-                                            <td>2009/12/09</td>
+                                        
+                                            @foreach ($data1 as $item)
+                                            <tr>
+                                            <td>{{$item->titre_page}}</td>
+                                            <td>{{$item->categorie_page_id}}</td>
+                                           
+                                            <td><center>
+                                                <img src="{{asset('storage/'.$item->image)}}" width="80px" alt=""></td>
+                                            </center>
                                             <td>$85,675</td>
                                         </tr>
+                                            @endforeach
+                                           
+                                       
                                 </table>
                             </div>
                         </div>
