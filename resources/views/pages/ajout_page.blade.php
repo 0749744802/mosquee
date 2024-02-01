@@ -48,7 +48,7 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ route('store') }}" method="POST">
+                                                    <form action="{{ route('stores') }}" method="POST">
                                                         @csrf
                                                         <div class="row g-3">
                                                             <div class="col-xxl-6">
@@ -106,7 +106,7 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-3 col-md-4">
+                                        <div class="col-xxl-4 col-md-4">
                                             <div>
                                                 <label for="labelInput" class="form-label">Categorie page</label>
                                                 <select class="js-example-basic-single" name="categorie_page_id">
@@ -119,7 +119,7 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-3 col-md-4">
+                                        <div class="col-xxl-4 col-md-4">
                                             <div class="form-check form-switch form-switch-lg" dir="ltr">
                                                 <input type="checkbox" class="form-check-input" id="customSwitchsizelg"
                                                     checked="" name="public">
@@ -128,7 +128,7 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-3 col-md-12">
+                                        <div class="col-xxl-12 col-md-12">
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h4 class="card-title mb-0">Resumé</h4>
@@ -146,7 +146,7 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-3 col-md-12">
+                                        <div class="col-xxl-12 col-md-12">
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h4 class="card-title mb-0">Description</h4>

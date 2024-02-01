@@ -9,13 +9,7 @@ use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
-    public function store(Request $request)
-    {
-
-        // dd($request->toArray());
-        $insert = Categorie::create(['parent' => $request->parent, 
-        'fils' => $request->fils]);
-    }
+   
     public function ajout_page(Request $request)
     {
 
@@ -29,10 +23,10 @@ class StoreController extends Controller
         //dd($filename);
         // dd($request->toArray());
         $insert = Page::create([
-            'titre_page' => $request->titre_page, 
-        'categorie_page_id' => $request->categorie_page_id, 
+            'titre_page' => $request->titre_page,
+        'categorie_page_id' => $request->categorie_page_id,
         'public' => $request->public,
-        'resume_page' => $request->resume_page, 
+        'resume_page' => $request->resume_page,
         'description_page' => $request->description_page,
         'image' => $filename
     ]);
