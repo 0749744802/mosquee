@@ -24,3 +24,4 @@ Route::get('/ajout_page/{pageID}', [DashbordController::class,'ajout_page'])->na
 Route::get('/liste_page', [DashbordController::class,'liste_page'])->name('liste_page');
 Route::post('/stores', [StoresController::class,'store'])->name('stores');
 Route::post('/store', [StoreController::class,'ajout_page'])->name('store');
+Route::post('supprimer_page/{pageID}', [StoreController::class,'supprime_page'])->name('supprime_page');
