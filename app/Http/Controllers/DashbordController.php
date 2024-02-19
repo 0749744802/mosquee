@@ -12,15 +12,29 @@ class DashbordController extends Controller
     {
         return view('pages.dashbord');
     }
-    public function ajout_page()
+    public function ajout_page($pageID)
     {
         $data = Categorie::get();
-        return view('pages.ajout_page', compact("data"));
+
+
+        //
+        $page = Page::find($pageID);
+
+        return view('pages.ajout_page', compact("data" ,'page'));
     }
-    public function liste_page()
+
+
+    public function liste_page(Page $page)
     {
         $data = Categorie::get();
-        $data1 = Page::get();
-        return view('pages.liste_page', compact("data", "data1"));
+
+        //
+        // $pages = Page::get();
+        $pages = $page->getAllpages();
+
+
+        // Debug
+        // dd($pages);
+        return view('pages.liste_page', compact("data", "pages"));
     }
 }

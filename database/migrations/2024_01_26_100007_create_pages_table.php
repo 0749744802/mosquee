@@ -16,11 +16,17 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->string("titre_page");
-            $table->string("categorie_page_id");
+            // $table->string("categorie_page_id");
             $table->string("public")->nullable();
             $table->string("resume_page");
             $table->string("description_page");
             $table->string("image")->nullable();
+
+
+            // Set foreign key constraints
+            $table->unsignedBigInteger('categorie_id');
+            $table->foreign('categorie_id')->references('id')->on('categories');
+
             $table->timestamps();
         });
     }

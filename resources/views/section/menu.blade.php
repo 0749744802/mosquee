@@ -1,3 +1,6 @@
+ @php
+     $pagesDefaultID = 0;
+ @endphp
  <div class="app-menu navbar-menu">
             <!-- LOGO -->
             <div class="navbar-brand-box">
@@ -79,10 +82,10 @@
                             <div class="collapse menu-dropdown" id="sidebarForms">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="ajout_page" class="nav-link" daata-key="">Ajouter une page</a>
+                                        <a href="{{ route('ajout_page' , $pagesDefaultID) }}" class="nav-link" daata-key="">Ajouter une page</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="liste_page" class="nav-link" data-key=""> Liste des pages</a>
+                                        <a href="{{ route('liste_page') }}" class="nav-link" data-key=""> Liste des pages</a>
                                     </li>
 
                                 </ul>

@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('pages.dashbord');
 });
 Route::get('/dashbord', [DashbordController::class,'dashbord']);
-Route::get('/ajout_page', [DashbordController::class,'ajout_page']);
-Route::get('/liste_page', [DashbordController::class,'liste_page']);
+Route::get('/ajout_page/{pageID}', [DashbordController::class,'ajout_page'])->name('ajout_page');
+Route::get('/liste_page', [DashbordController::class,'liste_page'])->name('liste_page');
 Route::post('/stores', [StoresController::class,'store'])->name('stores');
 Route::post('/store', [StoreController::class,'ajout_page'])->name('store');

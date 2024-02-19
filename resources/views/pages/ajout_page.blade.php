@@ -1,9 +1,30 @@
+
+@php
+    $page = (!empty($page))  ? $page : 0;
+    // dd($page);
+    $pageID = (!empty($page)) ? $page->id : '';
+    $titre_page = (!empty($page)) ? ucfirst($page->titre_page) : '';
+    $resume_page = (!empty($page)) ? ucfirst($page->resume_page) : '';
+    $description_page = (!empty($page)) ? ucfirst($page->description_page) : '';
+    $public = (!empty($page)) ? ucfirst($page->public) : '';
+    $categorie_id_page = (!empty($page)) ? ucfirst($page->categorie_id) : '';
+
+    // dd($pageID);
+@endphp
+
 @extends('index')
 @section('titre', 'ajoute de page')
 @section('content')
 
 
     <div class="page-content">
+
+        @if (session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="container-fluid">
 
             <!-- start page title -->
@@ -96,13 +117,15 @@
                         <div class="card-body">
                             <div class="live-preview">
                                 <form action="/store" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" value="{{ $pageID }}" name="pageID">
+
                                     @csrf
                                     <div class="row gy-4">
 
                                         <div class="col-xxl-3 col-md-4">
                                             <div>
                                                 <label for="basiInput" class="form-label">Titre de la page</label>
-                                                <input type="text" class="form-control" id="basiInput" name="titre_page">
+                                                <input type="text" class="form-control" id="basiInput" name="titre_page" value="{{ $titre_page }}">
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -111,7 +134,8 @@
                                                 <label for="labelInput" class="form-label">Categorie page</label>
                                                 <select class="js-example-basic-single" name="categorie_page_id">
                                                     @foreach ($data as $item)
-                                                        <option value="{{ $item->id }}">
+                                                        <option value="{{ $item->id }}"
+                                                            {{ $item->id==$categorie_id_page? "selected":"" }}>
                                                             {{ $item->fils }}
                                                         </option>
                                                     @endforeach
@@ -137,11 +161,9 @@
                                                 <div class="card-body">
 
                                                     <textarea name="resume_page" class="snow-editor" style="height: 300px; width: 100%;">
-
-
-
-
-                                                </textarea> <!-- end Snow-editor-->
+                                                        {{ $resume_page }}
+                                                    </textarea>
+                                                    <!-- end Snow-editor-->
                                                 </div><!-- end card-body -->
                                             </div>
                                         </div>
@@ -154,12 +176,7 @@
 
                                                 <div class="card-body">
 
-                                                    <textarea name="description_page" class="snow-editor" style="height: 300px; width: 100%;">
-
-
-
-
-                                                    </textarea> <!-- end Snow-editor-->
+                                                    <textarea name="description_page" class="snow-editor" style="height: 300px; width: 100%;">duiizzozeo</textarea> <!-- end Snow-editor-->
                                                 </div><!-- end card-body -->
                                             </div>
                                         </div>
