@@ -8,6 +8,7 @@
     $description_page = (!empty($page)) ? ucfirst($page->description_page) : '';
     $public = (!empty($page)) ? ucfirst($page->public) : '';
     $categorie_id_page = (!empty($page)) ? ucfirst($page->categorie_id) : '';
+    $image = (!empty($page)) ? ucfirst($page->image) : '';
 
     // dd($pageID);
 @endphp
@@ -144,11 +145,14 @@
                                         </div>
                                         <!--end col-->
                                         <div class="col-xxl-4 col-md-4">
+                                            <label class="form-check-label" for="customSwitchsizelg">Rendre
+                                                publique</label>
                                             <div class="form-check form-switch form-switch-lg" dir="ltr">
-                                                <input type="checkbox" class="form-check-input" id="customSwitchsizelg"
-                                                    checked="" name="public">
-                                                <label class="form-check-label" for="customSwitchsizelg">Rendre
-                                                    publique</label>
+                                                <input type="radio" class="form-d-input" id="customSwitchsizelg"
+                                                    checked="" name="public" value="1"> OUI
+                                                    <input type="radio" class="form-d-input" id="customSwitchsizelg"
+                                                     name="public" value="0">NON
+
                                             </div>
                                         </div>
                                         <!--end col-->
@@ -160,7 +164,7 @@
 
                                                 <div class="card-body">
 
-                                                    <textarea name="resume_page" class="snow-editor" style="height: 300px; width: 100%;">
+                                                    <textarea name="resume_page"  id="mymce" style="height: 300px; width: 100%;">
                                                         {{ $resume_page }}
                                                     </textarea>
                                                     <!-- end Snow-editor-->
@@ -176,7 +180,7 @@
 
                                                 <div class="card-body">
 
-                                                    <textarea name="description_page" class="snow-editor" style="height: 300px; width: 100%;">duiizzozeo</textarea> <!-- end Snow-editor-->
+                                                    <textarea name="description_page" id="mymce" style="height: 300px; width: 100%;">{{ $description_page }}</textarea> <!-- end Snow-editor-->
                                                 </div><!-- end card-body -->
                                             </div>
                                         </div>

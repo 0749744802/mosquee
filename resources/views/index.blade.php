@@ -29,6 +29,8 @@
      <link href="{{asset("assets/libs/quill/quill.bubble.css")}}" rel="stylesheet" type="text/css" />
      <link href="{{asset("assets/libs/quill/quill.snow.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{asset("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css")}}" rel="stylesheet" />
+    <link href="{{asset("assets/plugins/sweetalert2/sweetalert2.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset("assets/plugins/sweetalert/sweetalert.css")}}" rel="stylesheet" type="text/css">
 
     <!-- jsvectormap css -->
     <link href="{{asset("assets/libs/jsvectormap/css/jsvectormap.min.css")}}" rel="stylesheet" type="text/css" />
@@ -46,6 +48,7 @@
     <link href="{{asset("assets/css/app.min.css")}}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="{{asset("assets/css/custom.min.css")}}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset("assets/plugins/sweetalert2/sweetalert2.min.js") }}"></script>
 
 </head>
 
@@ -55,7 +58,7 @@
     <div id="layout-wrapper">
 
          @include('section.header')
-         
+
 
 <!-- removeNotificationModal -->
 <div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
@@ -1121,7 +1124,7 @@
 <script src="{{asset("https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js")}}"></script>
 <script src="{{asset("https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js")}}"></script>
 <script src="{{asset("https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js")}}"></script>
-<script src="{{asset("plugins/dropify/dist/js/dropify.min.js")}}"></script> 
+<script src="{{asset("plugins/dropify/dist/js/dropify.min.js")}}"></script>
 <script>
     $(document).ready(function() {
         // Basic
@@ -1164,7 +1167,29 @@
         })
     });
     </script>
-<script src="assets/js/pages/datatables.init.js"></script>
+<script src="{{asset("assets/js/pages/datatables.init.js")}}"></script>
+<script src="{{asset("assets/plugins/tinymce/tinymce.min.js")}}"></script>
+<script src="{{asset("assets/plugins/sweetalert/sweetalert.min.js")}}"></script>
+ <script src="{{asset("assets/plugins/sweetalert/jquery.sweet-alert.custom.js")}}"></script>
+<script>
+    $(document).ready(function() {
+
+        if ($("#mymce").length > 0) {
+            tinymce.init({
+                selector: "textarea#mymce",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+
+            });
+        }
+    });
+    </script>
 </body>
 
 </html>
