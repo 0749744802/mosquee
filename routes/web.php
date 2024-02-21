@@ -5,6 +5,7 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\StoresController;
 use App\Http\Controllers\DashbordController;
 use App\Http\Controllers\Store_ajout_produit_categorie;
+use App\Http\Controllers\Store_produitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,6 @@ Route::get('/ajout_produit/{produitID}', [DashbordController::class,'ajout_produ
 Route::get('/liste_page', [DashbordController::class,'liste_page'])->name('liste_page');
 Route::post('/stores', [StoresController::class,'store'])->name('stores');
 Route::post('/store', [StoreController::class,'ajout_page'])->name('store');
+Route::post('/store_produit', [Store_produitController::class,'ajout_produit'])->name('store_produit');
 Route::post('/store_ajout_produit_categorie', [Store_ajout_produit_categorie::class,'ajout_categorie_produit'])->name('store_ajout_produit_categorie');
 Route::get('supprimer_page', [StoreController::class,'supprime_page'])->name('supprime_page');

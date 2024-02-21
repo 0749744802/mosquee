@@ -1,8 +1,18 @@
 @php
     $produit = (!empty($produit))  ? $produit : 0;
-    // dd($page);
+    // dd($produit);
     $produitID = (!empty($produit)) ? $produit->id : '';
     $titre_produit = (!empty($produit)) ? ucfirst($produit->titre_produit) : '';
+    $public_produit = (!empty($produit)) ? ucfirst($produit->public_produit) : '';
+    $categorie_produit_id = (!empty($produit)) ? ucfirst($produit->categorie_produit_id) : '';
+    $stock_produit = (!empty($produit)) ? ucfirst($produit->stock_produit) : '';
+    $prix_produit = (!empty($produit)) ? ucfirst($produit->prix_produit) : '';
+    $reduction_produit = (!empty($produit)) ? ucfirst($produit->reduction_produit) : '';
+    $appreciation_produit_id = (!empty($produit)) ? ucfirst($produit->appreciation_produit_id) : '';
+    $resume_produit = (!empty($produit)) ? ucfirst($produit->resume_produit) : '';
+    $description_produit = (!empty($produit)) ? ucfirst($produit->description_produit) : '';
+    $image_produit = (!empty($produit)) ? ucfirst($produit->image_produit) : '';
+
    
 
 
@@ -67,8 +77,8 @@
                         </div><!-- end card header -->
                         <div class="card-body">
                             <div class="live-preview">
-                                <form action="/store" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden"  name="pageID">
+                                <form action="/store_produit" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden"  name="produitID">
 
                                     @csrf
                                     <div class="row gy-4">
@@ -76,17 +86,17 @@
                                         <div class="col-xxl-4 col-md-4">
                                             <div>
                                                 <label for="basiInput" class="form-label">Titre du produit</label>
-                                                <input type="text" class="form-control" id="basiInput" name="titre_page" >
+                                                <input type="text" class="form-control" id="basiInput" name="titre_produit" value="{{ $titre_produit }}">
                                             </div>
                                         </div>
                                         <!--end col-->
                                         <div class="col-xxl-4 col-md-4">
                                             <div>
                                                 <label for="labelInput" class="form-label">Categorie du produit</label>
-                                                <select class="js-example-basic-single" name="categorie_page_id">
+                                                <select class="js-example-basic-single" name="categorie_produit_id">
                                                     @foreach ($categorie_produit as $item)
                                                         <option value="{{ $item->id }}"
-                                                            {{ $item->id=="100"? "selected":"" }}>
+                                                            {{ $item->id== $categorie_produit_id ? "selected":"" }}>
                                                             {{ $item->categorie_produit_secondaire }}
                                                         </option>
                                                     @endforeach
@@ -98,7 +108,7 @@
                                             <label class="form-check-label" for="customSwitchsizelg">Rendre
                                                 publique</label>
                                             <div class="form-check form-switch form-switch-lg" dir="ltr">
-                                                <input type="checkbox" id="switch3" data-switch="bool" name="public" <?php echo ($public == "On")?"checked" : "" ?> />
+                                                <input type="checkbox" id="switch3" data-switch="bool" name="public_produit" <?php echo ($public_produit == "On")?"checked" : "" ?> />
                                                     <label for="switch3" data-on-label="Oui"
                                                            data-off-label="Non"></label>
 
@@ -109,7 +119,7 @@
                                             <div class="col-xxl-4 col-md-4">
                                                 <div>
                                                     <label for="basiInput" class="form-label">Stock du produit</label>
-                                                    <input type="text" class="form-control" id="basiInput" name="titre_page" >
+                                                    <input type="text" class="form-control" id="basiInput" name="stock_produit" value="{{ $stock_produit }}" >
                                                 </div>
                                             </div>
 
@@ -117,7 +127,7 @@
                                                 <div class="col-xxl-4 col-md-4">
                                                     <div>
                                                         <label for="basiInput" class="form-label">Prix du produit</label>
-                                                        <input type="text" class="form-control" id="basiInput" name="titre_page" >
+                                                        <input type="text" class="form-control" id="basiInput" name="prix_produit" value="{{ $prix_produit }}" >
                                                     </div>
                                                 </div>
 
@@ -125,17 +135,17 @@
                                                 <div class="col-xxl-4 col-md-4">
                                                     <div>
                                                         <label for="basiInput" class="form-label">Reduction du produit</label>
-                                                        <input type="text" class="form-control" id="basiInput" name="titre_page" >
+                                                        <input type="text" class="form-control" id="basiInput" name="reduction_produit" value="{{ $reduction_produit }}" >
                                                     </div>
                                                 </div>
                                                 <div class="col-xxl-4 col-md-4">
                                                     <div>
                                                         <label for="labelInput" class="form-label">Apreciation</label>
-                                                        <select class="js-example-basic-single" name="categorie_page_id">
+                                                        <select class="js-example-basic-single" name="appreciation_produit_id">
                                                             @foreach ($categorie_produit as $item)
                                                                 <option value="{{ $item->id }}"
-                                                                    {{ $item->id=="100"? "selected":"" }}>
-                                                                    {{ $item->fils }}
+                                                                    {{ $item->id== $appreciation_produit_id? "selected":"" }}>
+                                                                    {{ $item->categorie_produit_secondaire }}
                                                                 </option>
                                                             @endforeach
                                                         </select>
@@ -150,8 +160,8 @@
 
                                                 <div class="card-body">
 
-                                                    <textarea name="resume_page"  id="mymce" style="height: 300px; width: 100%;">
-
+                                                    <textarea name="resume_produit"  id="mymce" style="height: 300px; width: 100%;">
+                                                        {{ $resume_produit }}
                                                     </textarea>
                                                     <!-- end Snow-editor-->
                                                 </div><!-- end card-body -->
@@ -166,13 +176,13 @@
 
                                                 <div class="card-body">
 
-                                                    <textarea name="description_page" id="mymce" style="height: 300px; width: 100%;"></textarea> <!-- end Snow-editor-->
+                                                    <textarea name="description_produit" id="mymce" style="height: 300px; width: 100%;">{{ $description_produit }}</textarea> <!-- end Snow-editor-->
                                                 </div><!-- end card-body -->
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <img src="" width="100px" alt=""></div>
-                                            <input type="file" name="image" id="input-file-max-fs" multiple class="dropify" data-max-file-size="2M" />
+                                            <img src="{ asset('storage/' . $image_produit) }}" width="100px" alt=""></div>
+                                            <input type="file" name="image_produit" id="input-file-max-fs" multiple class="dropify" data-max-file-size="2M" />
                                             <div class="invalid-tooltip">
                                                 Please provide a valid city.
                                             </div>
