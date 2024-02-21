@@ -53,7 +53,7 @@
 </head>
 
 <body>
-
+    
     <!-- Begin page -->
     <div id="layout-wrapper">
 
@@ -96,6 +96,7 @@
         <div class="main-content">
 
             @yield('content')
+
             <!-- End Page-content -->
 
             @include('section.footer')

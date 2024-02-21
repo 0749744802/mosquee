@@ -91,6 +91,22 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#produit" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                <i class="ri-file-list-3-line"></i> <span data-key="">produit</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="produit">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ route('ajout_produit' , $pagesDefaultID) }}" class="nav-link" daata-key="">Ajouter un produit</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('liste_page') }}" class="nav-link" data-key=""> Liste des produits</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">

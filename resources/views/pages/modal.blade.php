@@ -1,4 +1,5 @@
- <!-- liste page modals -->
+
+<!-- liste page modals -->
 
  <div class="modal fade" id="liste_categorie_page" tabindex="-1" aria-labelledby="exampleModalgridLabel" aria-modal="true">
      <div class="modal-dialog">
@@ -39,3 +40,5 @@
          </div>
      </div>
  </div>
+ <!-- fin modal liste categorie -->
+
