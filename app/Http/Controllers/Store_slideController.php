@@ -71,7 +71,7 @@ class Store_slideController extends Controller
                     'sous_titre_slide' => $request->sous_titre_slide,
                     'description_slide' => $request->description_slide,
                     'lien_slide' => $request->lien_slide,
-                    'public_slide' => $request->public_slide,
+                    'public_slide' => $request->public_slide
 
                 ]
             );

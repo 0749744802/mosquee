@@ -126,6 +126,24 @@
                             </div>
                         </li>
 
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#service" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                <i class="ri-file-list-3-line"></i> <span data-key="">Service</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="service">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ route('ajout_service' , $pagesDefaultID) }}" class="nav-link" daata-key="">Ajouter un service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('liste_service') }}" class="nav-link" data-key=""> Liste des service</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
                                 <i class="ri-layout-grid-line"></i> <span data-key="t-tables">Tables</span>

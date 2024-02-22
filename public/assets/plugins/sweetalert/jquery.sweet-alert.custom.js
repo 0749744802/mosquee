@@ -929,6 +929,40 @@ $('.supprimer_categorie_location').click(function(){
       });
 
 
+
+      $('.supprimer_service').click(function(){
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, service supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+         $.get('supprimer_service',{id:id},function(){
+                $("#listeservice_"+id).hide();
+        });
+
+
+                swal("Supprimé!", "Votre  service a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+      });
+
+
       $('.supprimer_categorie_produit').click(function(){
         var id = $(this).attr("id");
         //Parameter
@@ -983,6 +1017,7 @@ $('.supprimer_slides').click(function(){
          $.post('ajax/supp_slide.php',{id:id},function(){
                 $("#listeslide_"+id).hide();
         });
+        
 
 
                 swal("Supprimé!", "Votre  slide / banniere a été supprimé correctement.", "success");
@@ -1026,6 +1061,10 @@ $('.supprimer_utilisateur').click(function(){
 
 
       });
+
+
+
+      
 
 
 
