@@ -220,7 +220,7 @@
 
 
 
- $('.supprimer_categorie_produit').click(function(){
+ $('.supprimer_categorie_produits').click(function(){
         var id = $(this).attr("id");
         //Parameter
 
@@ -727,7 +727,7 @@ $('.supprimer_categorie_location').click(function(){
 
 
 
-	$('.supprimer_categorie_page').click(function(){
+	$('.supprimer_categorie_pages').click(function(){
         var id = $(this).attr("id");
         //Parameter
 
@@ -828,7 +828,141 @@ $('.supprimer_categorie_location').click(function(){
       });
 
 
-$('.supprimer_slide').click(function(){
+
+      $('.supprimer_categorie_page').click(function(){
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, categorie page supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+         $.get('supprimer_categorie_page',{id:id},function(){
+                $("#listecategorie_page_"+id).hide();
+        });
+
+
+                swal("Supprimé!", "Votre  categorie page a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+      });
+
+
+      $('.supprimer_appreciation_produit').click(function(){
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, appreciation produit supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+         $.get('supprimer_appreciation_produit',{id:id},function(){
+                $("#listeappreciation_produit_"+id).hide();
+        });
+
+
+                swal("Supprimé!", "Votre  categorie page a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+      });
+
+
+
+      $('.supprimer_slide').click(function(){
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, slide supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+         $.get('supprimer_slide',{id:id},function(){
+                $("#listeslide_"+id).hide();
+        });
+
+
+                swal("Supprimé!", "Votre  slide a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+      });
+
+
+      $('.supprimer_categorie_produit').click(function(){
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, categorie produit supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+         $.get('supprimer_categorie_produit',{id:id},function(){
+                $("#listecategorie_produit_"+id).hide();
+        });
+
+
+                swal("Supprimé!", "Votre  categorie produit a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+      });
+
+
+$('.supprimer_slides').click(function(){
         var id = $(this).attr("id");
         //Parameter
 

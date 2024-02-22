@@ -108,6 +108,24 @@
                             </div>
                         </li>
 
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#slide" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                <i class="ri-file-list-3-line"></i> <span data-key="">Slide</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="slide">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ route('ajout_slide' , $pagesDefaultID) }}" class="nav-link" daata-key="">Ajouter un slide</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('liste_slide') }}" class="nav-link" data-key=""> Liste des slides</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
                                 <i class="ri-layout-grid-line"></i> <span data-key="t-tables">Tables</span>

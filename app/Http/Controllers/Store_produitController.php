@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appreciation_produit;
+use App\Models\Categorie_produit;
 use App\Models\Produit;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -74,6 +76,26 @@ class Store_produitController extends Controller
         $produit=produit::find($id);
         //ligne a supprimé
         $produit->delete();
+        return redirect()->back()->with('success', 'Produit supprimé avec succès');
+
+    }
+    public function supprimer_categorie_produit(Request $request)
+    {
+        $id=$request->id;
+        //recherche de la page a supprimé
+        $categorie_produit=Categorie_produit::find($id);
+        //ligne a supprimé
+        $categorie_produit->delete();
+        return redirect()->back()->with('success', 'Produit supprimé avec succès');
+
+    }
+    public function supprimer_appreciation_produit(Request $request)
+    {
+        $id=$request->id;
+        //recherche de la page a supprimé
+        $appreciation_produit=Appreciation_produit::find($id);
+        //ligne a supprimé
+        $appreciation_produit->delete();
         return redirect()->back()->with('success', 'Produit supprimé avec succès');
 
     }

@@ -67,4 +67,14 @@ class StoreController extends Controller
         return redirect()->back()->with('success', 'Page supprimé avec succès');
 
     }
+    public function supprimer_categorie_page (Request $request)
+    {
+        $id=$request->id;
+        //recherche de la page a supprimé
+        $categorie_page=Categorie::find($id);
+        //ligne a supprimé
+        $categorie_page->delete();
+        return redirect()->back()->with('success', 'Page supprimé avec succès');
+
+    }
 }
