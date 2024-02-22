@@ -65,16 +65,16 @@ aria-labelledby="exampleModalgridLabel" aria-modal="true">
              aria-label="Close"></button>
      </div>
      <div class="modal-body">
-         <form action="{{ route('stores') }}" method="POST">
+         <form action="{{ route('store_appreciation') }}" method="POST">
              @csrf
              <div class="row g-3">
 
                  </div><!--end col-->
                  <div class="col-xxl-12">
                      <div>
-                         <label for="lastName" class="form-label">fils</label>
+                         <label for="lastName" class="form-label">Titre</label>
                          <input type="text" class="form-control"
-                             id="lastName" placeholder="..." name="fils">
+                             id="lastName" placeholder="..." name="titre_appreciation">
                      </div>
                  </div><!--end col-->
 

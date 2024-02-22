@@ -13,7 +13,7 @@
     $description_produit = (!empty($produit)) ? ucfirst($produit->description_produit) : '';
     $image_produit = (!empty($produit)) ? ucfirst($produit->image_produit) : '';
 
-   
+
 
 
 @endphp
@@ -78,7 +78,8 @@
                         <div class="card-body">
                             <div class="live-preview">
                                 <form action="/store_produit" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden"  name="produitID">
+                                    <input type="hidden" value="{{ $produitID }}"  name="produitID">
+
 
                                     @csrf
                                     <div class="row gy-4">
@@ -142,10 +143,10 @@
                                                     <div>
                                                         <label for="labelInput" class="form-label">Apreciation</label>
                                                         <select class="js-example-basic-single" name="appreciation_produit_id">
-                                                            @foreach ($categorie_produit as $item)
+                                                            @foreach ($appreciation_produit as $item)
                                                                 <option value="{{ $item->id }}"
                                                                     {{ $item->id== $appreciation_produit_id? "selected":"" }}>
-                                                                    {{ $item->categorie_produit_secondaire }}
+                                                                    {{ $item->titre_appreciation }}
                                                                 </option>
                                                             @endforeach
                                                         </select>

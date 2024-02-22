@@ -101,7 +101,7 @@
                                         <a href="{{ route('ajout_produit' , $pagesDefaultID) }}" class="nav-link" daata-key="">Ajouter un produit</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('liste_page') }}" class="nav-link" data-key=""> Liste des produits</a>
+                                        <a href="{{ route('liste_produit') }}" class="nav-link" data-key=""> Liste des produits</a>
                                     </li>
 
                                 </ul>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("parent")->nullable();
             $table->string("fils");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

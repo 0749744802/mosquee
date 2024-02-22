@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("categorie_produit_principale")->nullable();
             $table->string("categorie_produit_secondaire");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

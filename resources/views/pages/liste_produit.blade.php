@@ -1,7 +1,7 @@
 @extends('index')
 @section('titre', 'liste des pages')
 @section('content')
-    @include('pages.modal')
+    @include('pages.modal_liste_produit')
     <div class="page-content">
         <div class="container-fluid">
 
@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                        <h4 class="mb-sm-0">LIste des pagess</h4>
+                        <h4 class="mb-sm-0">LIste des produits</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">liste</a></li>
-                                <li class="breadcrumb-item active">Page</li>
+                                <li class="breadcrumb-item active">Produit</li>
                             </ol>
                         </div>
 
@@ -29,12 +29,16 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">Listes des pages</h5>
+                            <h5 class="card-title mb-0">Listes des produits</h5>
 
                         </div>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#liste_categorie_page">
-                            liste des categories de pages
+                            liste des categories de produit
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#liste_appreciation">
+                            liste des appreciations de produit
                         </button>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -48,6 +52,10 @@
                                     <thead>
                                         <tr>
                                             <th>Titre</th>
+                                            <th>Prix</th>
+                                            <th>Reduction</th>
+                                            <th>Stock</th>
+                                            <th>Appreciation</th>
                                             <th>Categorie</th>
 
                                             <th>Image</th>
@@ -56,19 +64,23 @@
                                     </thead>
                                     <tbody>
 
-                                        @foreach ($pages as $item)
-                                            <tr id="listepage_{{ $item->id }}">
-                                                <td>{{ $item->titre_page }}</td>
-                                                <td>{{ $item->categorie->fils }}</td>
+                                        @foreach ($produits as $item)
+                                            <tr id="listeproduit_{{ $item->id }}">
+                                                <td>{{ $item->titre_produit }}</td>
+                                                <td>{{ $item->prix_produit }}</td>
+                                                <td>{{ $item->reduction_produit }}</td>
+                                                <td>{{ $item->stock_produit }}</td>
+                                                <td>{{ $item->appreciation_produit->titre_appreciation }}</td>
+                                                <td>{{ $item->categorie_produit->categorie_produit_secondaire }}</td>
 
                                                 <td>
                                                     <center>
-                                                        <img src="{{ asset('storage/' . $item->image) }}" width="80px"
+                                                        <img src="{{ asset('storage/' . $item->image_produit) }}" width="80px"
                                                             alt="">
                                                 </td>
                                                 </center>
                                                 <td>
-                                                    <a href="{{ route('ajout_page', $item->id) }}" class="btn btn-success">
+                                                    <a href="{{ route('ajout_produit', $item->id) }}" class="btn btn-success">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                             height="16" fill="currentColor" class="bi bi-pen"
                                                             viewBox="0 0 16 16">
@@ -78,7 +90,7 @@
                                                     </a>
 
 
-                                                        <button type="button"  class="btn btn-success btn-circle supprimer_pages" id="{{$item->id}}">
+                                                        <button type="button"  class="btn btn-success btn-circle supprimer_produits" id="{{$item->id}}">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
                                                                 <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />

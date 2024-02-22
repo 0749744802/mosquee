@@ -15,7 +15,7 @@ class Store_ajout_produit_categorie extends Controller
         Categorie_produit::updateOrCreate(
 
             [
-                'id'   => $request->categorie_produit_ID,
+                //'id'   => $request->categorie_produit_ID,
                 'categorie_produit_principale' => $request->categorie_produit_principale,
                 'categorie_produit_secondaire' => $request->categorie_produit_secondaire
 

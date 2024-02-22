@@ -26,9 +26,10 @@ class Store_produitController extends Controller
         if (isset($filename))
         {
             Produit::updateOrCreate(
-                
+                ['id'   => $request->produitID],
+
                 [
-                    'id'   => $request->produitID,
+
                     'titre_produit' => $request->titre_produit,
                     'public_produit' => $request->public_produit,
                     'categorie_produit_id' => $request->categorie_produit_id,
@@ -45,7 +46,8 @@ class Store_produitController extends Controller
         else
         {
             Produit::updateOrCreate(
-                
+                ['id'   => $request->produitID],
+
                 [
                     'id'   => $request->produitID,
                     'titre_produit' => $request->titre_produit,
@@ -64,5 +66,15 @@ class Store_produitController extends Controller
 
         // return
         return redirect()->back()->with('success', 'Produit ajouté avec succès');
+    }
+    public function supprime_produit(Request $request)
+    {
+        $id=$request->id;
+        //recherche de la page a supprimé
+        $produit=produit::find($id);
+        //ligne a supprimé
+        $produit->delete();
+        return redirect()->back()->with('success', 'Produit supprimé avec succès');
+
     }
 }

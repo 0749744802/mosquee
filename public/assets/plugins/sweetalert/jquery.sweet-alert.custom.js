@@ -795,6 +795,39 @@ $('.supprimer_categorie_location').click(function(){
       });
 
 
+      $('.supprimer_produits').click(function(){
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, produit supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+         $.get('supprimer_produit',{id:id},function(){
+                $("#listeproduit_"+id).hide();
+        });
+
+
+                swal("Supprimé!", "Votre  produit a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+      });
+
+
 $('.supprimer_slide').click(function(){
         var id = $(this).attr("id");
         //Parameter

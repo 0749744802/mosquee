@@ -3,14 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Produit extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
     protected $fillable = [
-        
+
         'titre_produit',
         'public_produit',
         'categorie_produit_id',
@@ -29,5 +30,9 @@ class Produit extends Model
     public function categorie_produit(): BelongsTo
     {
         return $this->belongsTo(Categorie_produit::class);
+    }
+    public function appreciation_produit(): BelongsTo
+    {
+        return $this->belongsTo(Appreciation_produit::class);
     }
 }
