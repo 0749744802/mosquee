@@ -963,6 +963,43 @@ $('.supprimer_categorie_location').click(function(){
       });
 
 
+
+
+
+
+      $('.supprimer_blog').click(function(){
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, blog supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+
+
+         $.get('supprimer_blog',{id:id},function(){
+                $("#listeblog_"+id).hide();
+        });
+
+
+                swal("Supprimé!", "Votre  blog a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+      });
+
+
       $('.supprimer_categorie_produit').click(function(){
         var id = $(this).attr("id");
         //Parameter

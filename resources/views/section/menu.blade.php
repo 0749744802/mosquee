@@ -144,6 +144,25 @@
                             </div>
                         </li>
 
+
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#blog" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
+                                <i class="ri-file-list-3-line"></i> <span data-key="">Blog</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="blog">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{ route('ajout_blog' , $pagesDefaultID) }}" class="nav-link" daata-key="">Ajouter un blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('liste_blog') }}" class="nav-link" data-key=""> Liste des blogs</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
                                 <i class="ri-layout-grid-line"></i> <span data-key="t-tables">Tables</span>
