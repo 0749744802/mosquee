@@ -1,5 +1,8 @@
-
-@php
+@extends('index')
+@section('titre', 'ajoute de blog')
+@section('content')
+<div class="page-content">
+        @php
     $blog = (!empty($blog))  ? $blog : 0;
     // dd($blog);
     $blogID = (!empty($blog)) ? $blog->id : '';
@@ -11,13 +14,6 @@
 
     // dd($blogID);
 @endphp
-
-@extends('index')
-@section('titre', 'ajoute de blog')
-@section('content')
-
-
-    <div class="page-content">
 
         @if (session('success'))
             <div class="alert alert-success text-center">
