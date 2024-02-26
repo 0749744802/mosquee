@@ -47,11 +47,11 @@
              <a class="dropdown-item" href="{{ route('profile.edit') }}"><i
                      class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                      class="align-middle">Profile</span></a>
-
-
+            
+            
              <div class="dropdown-divider"></div>
-
-
+             
+            
            <form action="{{ route('logout') }}" method="POST">
             @csrf
              <button class="dropdown-item" type="submit"><i
@@ -462,3 +462,6 @@
          </div>
          <!-- Sidebar -->
      </div>
+
+     <div class="sidebar-background"></div>
+ </div>
