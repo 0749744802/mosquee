@@ -1,14 +1,14 @@
 
-!function($) {
+!function ($) {
     "use strict";
 
-    var SweetAlert = function() {};
+    var SweetAlert = function () { };
 
- $('select.statutcommande').change(function(){
-		var id = $(this).children("option:selected").val();
-       // var order = $('#id').val();
-	    var order = $(this).attr("pid");
-	    //Parameter
+    $('select.statutcommande').change(function () {
+        var id = $(this).children("option:selected").val();
+        // var order = $('#id').val();
+        var order = $(this).attr("pid");
+        //Parameter
 
         swal({
             title: "Etes vous sûr de votre action?",
@@ -20,15 +20,15 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/change_statut.php',{id:id,order:order},function(){
+                $.post('ajax/change_statut.php', { id: id, order: order }, function () {
 
-        });
+                });
 
-		$("#selectorder").load(".option");
+                $("#selectorder").load(".option");
 
 
                 swal("confirmé!", "Votre article a été supprimé correctement.", "success");
@@ -38,11 +38,11 @@
         });
 
 
-	  });
+    });
 
 
 
-	  $('.supprimer_realisation').click(function(){
+    $('.supprimer_realisation').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -56,13 +56,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_realisation.php',{id:id},function(){
-                $("#listerealisation_"+id).hide();
-        });
+                $.post('ajax/supp_realisation.php', { id: id }, function () {
+                    $("#listerealisation_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  realisation a été supprimé correctement.", "success");
@@ -72,16 +72,16 @@
         });
 
 
-      });
+    });
 
 
 
 
-	 $('.removeproduct').click(function(){
-		var id = $(this).attr("id");
-       // var order = $('#order').val();
+    $('.removeproduct').click(function () {
+        var id = $(this).attr("id");
+        // var order = $('#order').val();
         var order = $(this).attr("pid");
-	    //Parameter
+        //Parameter
 
         swal({
             title: "Etes vous sûr de votre action?",
@@ -93,13 +93,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_produitcommande.php',{id:id,order:order},function(){
-                $("#product_"+id).hide();
-        });
+                $.post('ajax/delete_produitcommande.php', { id: id, order: order }, function () {
+                    $("#product_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Produit a été supprimé correctement.", "success");
@@ -109,17 +109,17 @@
         });
 
 
-	  });
+    });
 
 
 
 
 
-		 $('.updateproduct').click(function(){
-		var id = $(this).attr("id");
+    $('.updateproduct').click(function () {
+        var id = $(this).attr("id");
         var order = $(this).attr("pid");
-		var qaty = $('#qaty'+id).val();
-	    //Parameter
+        var qaty = $('#qaty' + id).val();
+        //Parameter
 
         swal({
             title: "Etes vous sûr de votre action?",
@@ -131,13 +131,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/update_produitcommande.php',{id:id,order:order,qaty:qaty},function(){
-                $("#product_"+id).reload();
-        });
+                $.post('ajax/update_produitcommande.php', { id: id, order: order, qaty: qaty }, function () {
+                    $("#product_" + id).reload();
+                });
 
 
                 swal("Supprimé!", "Produit a été supprimé correctement.", "success");
@@ -147,12 +147,12 @@
         });
 
 
-	  });
+    });
 
 
 
 
-	  $('.supprimer_temoignage').click(function(){
+    $('.supprimer_temoignage').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -166,13 +166,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_temoignage.php',{id:id},function(){
-                $("#listetemoignage_"+id).hide();
-        });
+                $.post('ajax/supp_temoignage.php', { id: id }, function () {
+                    $("#listetemoignage_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre temoignage a été supprimé correctement.", "success");
@@ -182,13 +182,13 @@
         });
 
 
-      });
+    });
 
 
 
- $('.supprimer_configuration').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.supprimer_configuration').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr de votre action?",
@@ -200,13 +200,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_configuration.php',{id:id},function(){
-                $("#listeconfiguration_"+id).hide();
-        });
+                $.post('ajax/supp_configuration.php', { id: id }, function () {
+                    $("#listeconfiguration_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre configuration a été supprimé correctement.", "success");
@@ -216,11 +216,11 @@
         });
 
 
-	  });
+    });
 
 
 
- $('.supprimer_categorie_produits').click(function(){
+    $('.supprimer_categorie_produits').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -234,13 +234,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_categorie_produit.php',{id:id},function(){
-                $("#listecategorieproduit_"+id).hide();
-        });
+                $.post('ajax/supp_categorie_produit.php', { id: id }, function () {
+                    $("#listecategorieproduit_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre categorie prosuit a été supprimé correctement.", "success");
@@ -250,12 +250,12 @@
         });
 
 
-      });
+    });
 
 
 
 
- $('.supprimer_produit').click(function(){
+    $('.supprimer_produit').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -269,13 +269,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_produit.php',{id:id},function(){
-                $("#listeproduit_"+id).hide();
-        });
+                $.post('ajax/supp_produit.php', { id: id }, function () {
+                    $("#listeproduit_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre prosuit a été supprimé correctement.", "success");
@@ -285,12 +285,12 @@
         });
 
 
-      });
+    });
 
 
 
 
- $('.supprimer_client').click(function(){
+    $('.supprimer_client').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -304,13 +304,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_client.php',{id:id},function(){
-                $("#listeclient_"+id).hide();
-        });
+                $.post('ajax/supp_client.php', { id: id }, function () {
+                    $("#listeclient_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre client a été supprimé correctement.", "success");
@@ -320,11 +320,11 @@
         });
 
 
-      });
+    });
 
 
 
- $('.valide_commande').click(function(){
+    $('.valide_commande').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -338,13 +338,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/valide_commande.php',{id:id},function(){
-                $("#listecommandess_"+id).hide();
-        });
+                $.post('ajax/valide_commande.php', { id: id }, function () {
+                    $("#listecommandess_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre commande a été validée correctement.", "success");
@@ -354,11 +354,11 @@
         });
 
 
-      });
+    });
 
 
 
- $('.valide_reservation').click(function(){
+    $('.valide_reservation').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -372,13 +372,13 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/valide_reservation.php',{id:id},function(){
-                $("#listereservation_"+id).hide();
-        });
+                $.post('ajax/valide_reservation.php', { id: id }, function () {
+                    $("#listereservation_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre commande a été validée correctement.", "success");
@@ -388,12 +388,12 @@
         });
 
 
-      });
+    });
 
 
 
 
- $('.supprimer_panier').click(function(){
+    $('.supprimer_panier').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -407,14 +407,14 @@
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('backoffices/ajax/supppanier.php',{id:id},function(){
-                $(".listepanier_"+id).hide();
+                $.post('backoffices/ajax/supppanier.php', { id: id }, function () {
+                    $(".listepanier_" + id).hide();
 
-        });
+                });
 
 
                 swal("Supprimé!", "Votre produit à éte  supprimé correctement.", "success");
@@ -426,9 +426,9 @@
         });
 
 
-      });
+    });
 
-$('.ajouter_panier').click(function(){
+    $('.ajouter_panier').click(function () {
         var id = $(this).attr("id");
         var quantity = $(this).attr("quantity");
         //Parameter
@@ -437,7 +437,7 @@ $('.ajouter_panier').click(function(){
 
 
 
-         $.post('models/panier.model.php',{id:id},function(){});
+        $.post('models/panier.model.php', { id: id }, function () { });
 
 
 
@@ -449,7 +449,7 @@ $('.ajouter_panier').click(function(){
 
 
 
-      });
+    });
 
 
 
@@ -457,7 +457,7 @@ $('.ajouter_panier').click(function(){
 
 
 
- $('.supprimer_categorie_fourniture').click(function(){
+    $('.supprimer_categorie_fourniture').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -471,13 +471,13 @@ $('.ajouter_panier').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_categorie_fourniture.php',{id:id},function(){
-                $("#listecategoriefourniture_"+id).hide();
-        });
+                $.post('ajax/supp_categorie_fourniture.php', { id: id }, function () {
+                    $("#listecategoriefourniture_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre categorie fourniture a été supprimé correctement.", "success");
@@ -487,10 +487,10 @@ $('.ajouter_panier').click(function(){
         });
 
 
-      });
+    });
 
 
- $('.supprimer_fourniture').click(function(){
+    $('.supprimer_fourniture').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -504,13 +504,13 @@ $('.ajouter_panier').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_fourniture.php',{id:id},function(){
-                $("#listefourniture_"+id).hide();
-        });
+                $.post('ajax/supp_fourniture.php', { id: id }, function () {
+                    $("#listefourniture_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre fourniture a été supprimé correctement.", "success");
@@ -520,10 +520,10 @@ $('.ajouter_panier').click(function(){
         });
 
 
-      });
+    });
 
 
- $('.supprimer_conseil').click(function(){
+    $('.supprimer_conseil').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -537,13 +537,13 @@ $('.ajouter_panier').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_conseil.php',{id:id},function(){
-                $("#listeconseil_"+id).hide();
-        });
+                $.post('ajax/supp_conseil.php', { id: id }, function () {
+                    $("#listeconseil_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre conseil a été supprimé correctement.", "success");
@@ -553,11 +553,11 @@ $('.ajouter_panier').click(function(){
         });
 
 
-      });
+    });
 
 
 
- $('.supprimer_service').click(function(){
+    $('.supprimer_service').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -571,13 +571,13 @@ $('.ajouter_panier').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_service.php',{id:id},function(){
-                $("#listeservice_"+id).hide();
-        });
+                $.post('ajax/supp_service.php', { id: id }, function () {
+                    $("#listeservice_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre service a été supprimé correctement.", "success");
@@ -587,10 +587,10 @@ $('.ajouter_panier').click(function(){
         });
 
 
-      });
+    });
 
 
- $('.supprimer_location').click(function(){
+    $('.supprimer_location').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -604,13 +604,13 @@ $('.ajouter_panier').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_location.php',{id:id},function(){
-                $("#listelocation_"+id).hide();
-        });
+                $.post('ajax/supp_location.php', { id: id }, function () {
+                    $("#listelocation_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre location a été supprimé correctement.", "success");
@@ -620,11 +620,11 @@ $('.ajouter_panier').click(function(){
         });
 
 
-      });
+    });
 
 
 
- $('.supprimer_galerie_location').click(function(){
+    $('.supprimer_galerie_location').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -638,13 +638,13 @@ $('.ajouter_panier').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_galerie_location.php',{id:id},function(){
-                $("#gallocation_"+id).hide();
-        });
+                $.post('ajax/supp_galerie_location.php', { id: id }, function () {
+                    $("#gallocation_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre photo a été supprimé correctement de la galerie de  location .", "success");
@@ -654,11 +654,11 @@ $('.ajouter_panier').click(function(){
         });
 
 
-      });
+    });
 
 
 
- $('.supprimer_type_location').click(function(){
+    $('.supprimer_type_location').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -672,13 +672,13 @@ $('.ajouter_panier').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_type_location.php',{id:id},function(){
-                $("#listetypelocation_"+id).hide();
-        });
+                $.post('ajax/supp_type_location.php', { id: id }, function () {
+                    $("#listetypelocation_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre type de location a été supprimé correctement.", "success");
@@ -688,10 +688,10 @@ $('.ajouter_panier').click(function(){
         });
 
 
-      });
+    });
 
 
-$('.supprimer_categorie_location').click(function(){
+    $('.supprimer_categorie_location').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -705,13 +705,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_categorie_location.php',{id:id},function(){
-                $("#listecategorielocation_"+id).hide();
-        });
+                $.post('ajax/supp_categorie_location.php', { id: id }, function () {
+                    $("#listecategorielocation_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre categorie de location a été supprimé correctement.", "success");
@@ -721,13 +721,13 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
 
 
 
-	$('.supprimer_categorie_pages').click(function(){
+    $('.supprimer_categorie_pages').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -741,13 +741,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_categorie_page.php',{id:id},function(){
-                $("#listecategoriepage_"+id).hide();
-        });
+                $.post('ajax/supp_categorie_page.php', { id: id }, function () {
+                    $("#listecategoriepage_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre categorie de page a été supprimé correctement.", "success");
@@ -757,12 +757,12 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
 
 
-    $('.supprimer_pages').click(function(){
+    $('.supprimer_pages').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -776,13 +776,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.get('supprimer_page',{id:id},function(){
-                $("#listepage_"+id).hide();
-        });
+                $.get('supprimer_page', { id: id }, function () {
+                    $("#listepage_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  page a été supprimé correctement.", "success");
@@ -792,10 +792,10 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
-      $('.supprimer_produits').click(function(){
+    $('.supprimer_produits').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -809,13 +809,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.get('supprimer_produit',{id:id},function(){
-                $("#listeproduit_"+id).hide();
-        });
+                $.get('supprimer_produit', { id: id }, function () {
+                    $("#listeproduit_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  produit a été supprimé correctement.", "success");
@@ -825,11 +825,11 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
 
-      $('.supprimer_categorie_page').click(function(){
+    $('.supprimer_categorie_page').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -843,13 +843,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.get('supprimer_categorie_page',{id:id},function(){
-                $("#listecategorie_page_"+id).hide();
-        });
+                $.get('supprimer_categorie_page', { id: id }, function () {
+                    $("#listecategorie_page_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  categorie page a été supprimé correctement.", "success");
@@ -859,10 +859,10 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
-      $('.supprimer_appreciation_produit').click(function(){
+    $('.supprimer_appreciation_produit').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -876,13 +876,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.get('supprimer_appreciation_produit',{id:id},function(){
-                $("#listeappreciation_produit_"+id).hide();
-        });
+                $.get('supprimer_appreciation_produit', { id: id }, function () {
+                    $("#listeappreciation_produit_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  categorie page a été supprimé correctement.", "success");
@@ -892,11 +892,11 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
 
-      $('.supprimer_slide').click(function(){
+    $('.supprimer_slide').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -910,13 +910,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.get('supprimer_slide',{id:id},function(){
-                $("#listeslide_"+id).hide();
-        });
+                $.get('supprimer_slide', { id: id }, function () {
+                    $("#listeslide_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  slide a été supprimé correctement.", "success");
@@ -926,11 +926,11 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
 
-      $('.supprimer_service').click(function(){
+    $('.supprimer_service').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -944,13 +944,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.get('supprimer_service',{id:id},function(){
-                $("#listeservice_"+id).hide();
-        });
+                $.get('supprimer_service', { id: id }, function () {
+                    $("#listeservice_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  service a été supprimé correctement.", "success");
@@ -960,10 +960,81 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
-      $('.supprimer_categorie_produit').click(function(){
+
+
+
+
+    $('.supprimer_blog').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, blog supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+
+
+                $.get('supprimer_blog', { id: id }, function () {
+                    $("#listeblog_" + id).hide();
+                });
+
+
+                swal("Supprimé!", "Votre  blog a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+    });
+
+
+
+    $('.supprimer_membre').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, membre supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+
+
+                $.get('supprimer_membre', { id: id }, function () {
+                    $("#listemembre_" + id).hide();
+                });
+
+
+                swal("Supprimé!", "Votre  membre a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+    });
+
+
+    $('.supprimer_categorie_produit').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -977,13 +1048,13 @@ $('.supprimer_categorie_location').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.get('supprimer_categorie_produit',{id:id},function(){
-                $("#listecategorie_produit_"+id).hide();
-        });
+                $.get('supprimer_categorie_produit', { id: id }, function () {
+                    $("#listecategorie_produit_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  categorie produit a été supprimé correctement.", "success");
@@ -993,10 +1064,10 @@ $('.supprimer_categorie_location').click(function(){
         });
 
 
-      });
+    });
 
 
-$('.supprimer_slides').click(function(){
+    $('.supprimer_slides').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -1010,14 +1081,14 @@ $('.supprimer_slides').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_slide.php',{id:id},function(){
-                $("#listeslide_"+id).hide();
-        });
-        
+                $.post('ajax/supp_slide.php', { id: id }, function () {
+                    $("#listeslide_" + id).hide();
+                });
+
 
 
                 swal("Supprimé!", "Votre  slide / banniere a été supprimé correctement.", "success");
@@ -1027,10 +1098,10 @@ $('.supprimer_slides').click(function(){
         });
 
 
-      });
+    });
 
 
-$('.supprimer_utilisateur').click(function(){
+    $('.supprimer_utilisateur').click(function () {
         var id = $(this).attr("id");
         //Parameter
 
@@ -1044,13 +1115,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/supp_utilisateur.php',{id:id},function(){
-                $("#listeutilisateur_"+id).hide();
-        });
+                $.post('ajax/supp_utilisateur.php', { id: id }, function () {
+                    $("#listeutilisateur_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre  utilisateur a été supprimé correctement.", "success");
@@ -1060,11 +1131,7 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-      });
-
-
-
-      
+    });
 
 
 
@@ -1073,9 +1140,13 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
- $('.deleteclasse').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+
+
+
+
+    $('.deleteclasse').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr de votre action?",
@@ -1087,13 +1158,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_classe.php',{id:id},function(){
-                $("#classe_"+id).hide();
-        });
+                $.post('ajax/delete_classe.php', { id: id }, function () {
+                    $("#classe_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre eleve a été supprimé correctement.", "success");
@@ -1103,14 +1174,14 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
 
- $('.deletematiere').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletematiere').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr de votre action?",
@@ -1122,13 +1193,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_livre.php',{id:id},function(){
-                $("#matiere_"+id).hide();
-        });
+                $.post('ajax/delete_livre.php', { id: id }, function () {
+                    $("#matiere_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre matire a été supprimé correctement.", "success");
@@ -1138,14 +1209,14 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
 
- $('.articledelete').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.articledelete').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr de votre action?",
@@ -1157,13 +1228,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_article.php',{id:id},function(){
-                $("#article_"+id).hide();
-        });
+                $.post('ajax/delete_article.php', { id: id }, function () {
+                    $("#article_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre article a été supprimé correctement.", "success");
@@ -1173,13 +1244,13 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
-	$('.deleteeleve').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deleteeleve').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1191,13 +1262,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_eleve.php',{id:id},function(){
-                $("#lteleve_"+id).hide();
-        });
+                $.post('ajax/delete_eleve.php', { id: id }, function () {
+                    $("#lteleve_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre eleve a été supprimé correctement.", "success");
@@ -1207,13 +1278,13 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
- $('.deletescolarite').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletescolarite').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1225,13 +1296,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_scolarite.php',{id:id},function(){
-                $("#lteleve_"+id).hide();
-        });
+                $.post('ajax/delete_scolarite.php', { id: id }, function () {
+                    $("#lteleve_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre scolarite a été supprimée correctement.", "success");
@@ -1241,13 +1312,13 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
- $('.deleteclient').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deleteclient').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1259,13 +1330,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_client.php',{id:id},function(){
-                $("#client_"+id).hide();
-        });
+                $.post('ajax/delete_client.php', { id: id }, function () {
+                    $("#client_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre appreciation a été supprimée correctement.", "success");
@@ -1275,7 +1346,7 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
@@ -1293,9 +1364,9 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
- $('.deletecommande').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletecommande').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1307,13 +1378,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_commande.php',{id:id},function(){
-                $("#commande_"+id).hide();
-        });
+                $.post('ajax/delete_commande.php', { id: id }, function () {
+                    $("#commande_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre commande a été supprimée correctement.", "success");
@@ -1323,12 +1394,12 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
- $('.validecommande').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.validecommande').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1340,13 +1411,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/valide_commande.php',{id:id},function(){
-                $("#commande_"+id).hide();
-        });
+                $.post('ajax/valide_commande.php', { id: id }, function () {
+                    $("#commande_" + id).hide();
+                });
 
 
                 swal("Validée!", "Votre commande a été validée correctement.", "success");
@@ -1356,13 +1427,13 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
- $('.deleteville').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deleteville').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1374,13 +1445,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_ville.php',{id:id},function(){
-                $("#ville_"+id).hide();
-        });
+                $.post('ajax/delete_ville.php', { id: id }, function () {
+                    $("#ville_" + id).hide();
+                });
 
 
                 swal("Supprimée!", "Votre ville a été validée correctement.", "success");
@@ -1390,15 +1461,15 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
 
 
- $('.deletepointvente').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletepointvente').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1410,13 +1481,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_pointvente.php',{id:id},function(){
-                $("#pointvente_"+id).hide();
-        });
+                $.post('ajax/delete_pointvente.php', { id: id }, function () {
+                    $("#pointvente_" + id).hide();
+                });
 
 
                 swal("Supprimée!", "point de vente supprimé.", "success");
@@ -1426,7 +1497,7 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
@@ -1439,9 +1510,9 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
- $('.deletecommune').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletecommune').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1453,13 +1524,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_commune.php',{id:id},function(){
-                $("#commune_"+id).hide();
-        });
+                $.post('ajax/delete_commune.php', { id: id }, function () {
+                    $("#commune_" + id).hide();
+                });
 
 
                 swal("Supprimée!", "Votre commune a été validée correctement.", "success");
@@ -1469,14 +1540,14 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
 
-	 $('.deletefaq').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletefaq').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1488,13 +1559,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_faq.php',{id:id},function(){
-                $("#faq_"+id).hide();
-        });
+                $.post('ajax/delete_faq.php', { id: id }, function () {
+                    $("#faq_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre FAQ a été supprimé correctement.", "success");
@@ -1504,14 +1575,14 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
 
-   $('.categoriepagedelete').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.categoriepagedelete').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1523,13 +1594,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_categoriepage.php',{id:id},function(){
-                $("#categorie_"+id).hide();
-        });
+                $.post('ajax/delete_categoriepage.php', { id: id }, function () {
+                    $("#categorie_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre catégorie a été supprimée correctement.", "success");
@@ -1541,16 +1612,16 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	  });
+    });
 
 
 
 
 
 
-   $('.deletesouscategorie').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletesouscategorie').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1562,13 +1633,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_souscategorieproduit.php',{id:id},function(){
-                $("#categorie_"+id).hide();
-        });
+                $.post('ajax/delete_souscategorieproduit.php', { id: id }, function () {
+                    $("#categorie_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre sous catégorie a été supprimée correctement.", "success");
@@ -1580,16 +1651,16 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	  });
+    });
 
 
 
 
 
 
-   $('.deletecatpointvente').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletecatpointvente').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1601,13 +1672,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_catpointvente.php',{id:id},function(){
-                $("#categorie_"+id).hide();
-        });
+                $.post('ajax/delete_catpointvente.php', { id: id }, function () {
+                    $("#categorie_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre sous catégorie a été supprimée correctement.", "success");
@@ -1619,14 +1690,14 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	  });
+    });
 
 
 
 
-	    $('.deletecategoriearticle').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletecategoriearticle').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1638,13 +1709,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_categoriearticle.php',{id:id},function(){
-                $("#categorie_"+id).hide();
-        });
+                $.post('ajax/delete_categoriearticle.php', { id: id }, function () {
+                    $("#categorie_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre catégorie a été supprimée correctement.", "success");
@@ -1653,16 +1724,16 @@ $('.supprimer_utilisateur').click(function(){
             }
         });
 
-	  });
+    });
 
 
 
 
 
 
-	  $('.pagedelete').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.pagedelete').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1674,13 +1745,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_page.php',{id:id},function(){
-                $("#page_"+id).hide();
-        });
+                $.post('ajax/delete_page.php', { id: id }, function () {
+                    $("#page_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre page a été supprimée correctement.", "success");
@@ -1692,15 +1763,15 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	  });
+    });
 
 
 
 
 
- $('.deleteclasse1').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deleteclasse1').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1712,13 +1783,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_classe1.php',{id:id},function(){
-                $("#classe_"+id).hide();
-        });
+                $.post('ajax/delete_classe1.php', { id: id }, function () {
+                    $("#classe_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre classe a été supprimé correctement.", "success");
@@ -1728,15 +1799,15 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
 
 
-	 $('.valideproduit').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.valideproduit').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1748,13 +1819,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/valide_produit.php',{id:id},function(){
-                $("#produit_"+id).hide();
-        });
+                $.post('ajax/valide_produit.php', { id: id }, function () {
+                    $("#produit_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre produit a été validé correctement.", "success");
@@ -1764,15 +1835,15 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
 
 
-	 $('.deletecategorieproduit').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletecategorieproduit').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1784,13 +1855,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_categorieproduit.php',{id:id},function(){
-                $("#categorie_"+id).hide();
-        });
+                $.post('ajax/delete_categorieproduit.php', { id: id }, function () {
+                    $("#categorie_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre catégorie a été validée correctement.", "success");
@@ -1800,16 +1871,16 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
 
 
 
- $('.deleteslide').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deleteslide').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1821,13 +1892,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_slideshow.php',{id:id},function(){
-                $("#slide_"+id).hide();
-        });
+                $.post('ajax/delete_slideshow.php', { id: id }, function () {
+                    $("#slide_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre SLIDESHOW a été supprimé correctement.", "success");
@@ -1837,7 +1908,7 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
@@ -1846,9 +1917,9 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	   $('.deletemarque').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletemarque').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1860,13 +1931,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_marque.php',{id:id},function(){
-                $("#marque_"+id).hide();
-        });
+                $.post('ajax/delete_marque.php', { id: id }, function () {
+                    $("#marque_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre CLIENT a été supprimé correctement.", "success");
@@ -1876,7 +1947,7 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
@@ -1887,9 +1958,9 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	   $('.deletecontact').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletecontact').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1901,13 +1972,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_contact.php',{id:id},function(){
-                $("#contact_"+id).hide();
-        });
+                $.post('ajax/delete_contact.php', { id: id }, function () {
+                    $("#contact_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre contact a été supprimé correctement.", "success");
@@ -1919,16 +1990,16 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	  });
+    });
 
 
 
 
 
 
- $('.validearticle').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.validearticle').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1940,13 +2011,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/valide_article.php',{id:id},function(){
-              //  $("#article_"+id).hide();
-        });
+                $.post('ajax/valide_article.php', { id: id }, function () {
+                    //  $("#article_"+id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre Catégorie a été supprimée correctement.", "success");
@@ -1958,16 +2029,16 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	  });
+    });
 
 
 
 
 
 
-	 $('.deletecategorie').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deletecategorie').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -1979,13 +2050,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_categorie.php',{id:id},function(){
-                $("#categorie_"+id).hide();
-        });
+                $.post('ajax/delete_categorie.php', { id: id }, function () {
+                    $("#categorie_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Votre article a été supprimé correctement.", "success");
@@ -1997,11 +2068,11 @@ $('.supprimer_utilisateur').click(function(){
 
 
 
-	  });
+    });
 
-	 $('.deleteservice').click(function(){
-		var id = $(this).attr("id");
-	    //Parameter
+    $('.deleteservice').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
 
         swal({
             title: "Etes vous sûr?",
@@ -2013,13 +2084,13 @@ $('.supprimer_utilisateur').click(function(){
             cancelButtonText: "Non, Annuler!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
+        }, function (isConfirm) {
             if (isConfirm) {
 
 
-         $.post('ajax/delete_service.php',{id:id},function(){
-                $("#service_"+id).hide();
-        });
+                $.post('ajax/delete_service.php', { id: id }, function () {
+                    $("#service_" + id).hide();
+                });
 
 
                 swal("Supprimé!", "Service a été supprimée correctement.", "success");
@@ -2029,7 +2100,7 @@ $('.supprimer_utilisateur').click(function(){
         });
 
 
-	  });
+    });
 
 
 
@@ -2039,94 +2110,94 @@ $('.supprimer_utilisateur').click(function(){
 
 
     //examples
-    SweetAlert.prototype.init = function() {
+    SweetAlert.prototype.init = function () {
 
-    //Basic
-    $('#sa-basic').click(function(){
-        swal("Here's a message!");
-    });
-
-    //A title with a text under
-    $('#sa-title').click(function(){
-        swal("Here's a message!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.")
-    });
-
-    //Success Message
-    $('#sa-success').click(function(){
-        swal("Good job!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.", "success")
-    });
-
-    //Warning Message
-    $('#sa-warning').click(function(){
-        swal({
-            title: "Are you sure?",
-            text: "You will not be able to recover this imaginary file!",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, delete it!",
-            closeOnConfirm: false
-        }, function(){
-            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+        //Basic
+        $('#sa-basic').click(function () {
+            swal("Here's a message!");
         });
-    });
 
-    //Parameter
-    $('.sa-params').click(function(){
-        swal({
-            title: "Are you sure?",
-            text: "You will not be able to recover this imaginary file!",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, delete it!",
-            cancelButtonText: "No, cancel plx!",
-            closeOnConfirm: false,
-            closeOnCancel: false
-        }, function(isConfirm){
-            if (isConfirm) {
+        //A title with a text under
+        $('#sa-title').click(function () {
+            swal("Here's a message!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.")
+        });
+
+        //Success Message
+        $('#sa-success').click(function () {
+            swal("Good job!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.", "success")
+        });
+
+        //Warning Message
+        $('#sa-warning').click(function () {
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
                 swal("Deleted!", "Your imaginary file has been deleted.", "success");
-            } else {
-                swal("Cancelled", "Your imaginary file is safe :)", "error");
-            }
+            });
         });
-    });
 
-
-
-
-
-
-
-
-
-    //Custom Image
-    $('#sa-image').click(function(){
-        swal({
-            title: "Govinda!",
-            text: "Recently joined twitter",
-            imageUrl: "../assets/images/users/1.jpg"
+        //Parameter
+        $('.sa-params').click(function () {
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel plx!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function (isConfirm) {
+                if (isConfirm) {
+                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                } else {
+                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                }
+            });
         });
-    });
 
-    //Auto Close Timer
-    $('#sa-close').click(function(){
-         swal({
-            title: "Auto close alert!",
-            text: "I will close in 2 seconds.",
-            timer: 2000,
-            showConfirmButton: false
+
+
+
+
+
+
+
+
+        //Custom Image
+        $('#sa-image').click(function () {
+            swal({
+                title: "Govinda!",
+                text: "Recently joined twitter",
+                imageUrl: "../assets/images/users/1.jpg"
+            });
         });
-    });
+
+        //Auto Close Timer
+        $('#sa-close').click(function () {
+            swal({
+                title: "Auto close alert!",
+                text: "I will close in 2 seconds.",
+                timer: 2000,
+                showConfirmButton: false
+            });
+        });
 
 
     },
-    //init
-    $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
+        //init
+        $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
 }(window.jQuery),
 
-//initializing
-function($) {
-    "use strict";
-    $.SweetAlert.init()
-}(window.jQuery);
+    //initializing
+    function ($) {
+        "use strict";
+        $.SweetAlert.init()
+    }(window.jQuery);
