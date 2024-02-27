@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 class Store_serviceController extends Controller
 {
     //
+    public function lien_services()
+    {
+        return view('logiciel.pages.services');
+    }
     public function liste_service(service $services)
     {
        // $data = Categorie::get();

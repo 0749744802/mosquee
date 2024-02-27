@@ -47,11 +47,11 @@
              <a class="dropdown-item" href="{{ route('profile.edit') }}"><i
                      class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                      class="align-middle">Profile</span></a>
-            
-            
+
+
              <div class="dropdown-divider"></div>
-             
-            
+
+
            <form action="{{ route('logout') }}" method="POST">
             @csrf
              <button class="dropdown-item" type="submit"><i
@@ -202,6 +202,28 @@
                             <li class="nav-item">
                                 <a href="{{ route('liste_membre') }}" class="nav-link" data-key=""> Liste des
                                     membres</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#menu" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarForms">
+                        <i class="ri-file-list-3-line"></i> <span data-key="">Menu</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="menu">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('ajout_menu', $pagesDefaultID) }}" class="nav-link"
+                                    daata-key="">Ajouter un menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('liste_menu') }}" class="nav-link" data-key=""> Liste des
+                                    menu</a>
                             </li>
 
                         </ul>

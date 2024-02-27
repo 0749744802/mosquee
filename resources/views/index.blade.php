@@ -53,7 +53,7 @@
 </head>
 
 <body>
-    
+
     <!-- Begin page -->
     <div id="layout-wrapper">
 
@@ -1191,6 +1191,7 @@
         }
     });
     </script>
+   
 </body>
 
 </html>
