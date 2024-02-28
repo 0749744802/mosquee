@@ -1070,6 +1070,40 @@
     });
 
 
+
+    $('.supprimer_video').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, video supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+
+
+                $.get('supprimer_video', { id: id }, function () {
+                    $("#listevideo_" + id).hide();
+                });
+
+
+                swal("Supprimé!", "Votre  video a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+    });
+
+
     $('.supprimer_categorie_produit').click(function () {
         var id = $(this).attr("id");
         //Parameter

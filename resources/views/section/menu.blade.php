@@ -211,6 +211,49 @@
 
 
                 <li class="nav-item">
+                    <a class="nav-link menu-link" href="#logiciel" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarForms">
+                        <i class="ri-file-list-3-line"></i> <span data-key="">Logiciel</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="logiciel">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('ajout_logiciel', $pagesDefaultID) }}" class="nav-link"
+                                    daata-key="">Ajouter un logiciel</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('liste_logiciel') }}" class="nav-link" data-key=""> Liste des logiciels</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#video" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarForms">
+                        <i class="ri-file-list-3-line"></i> <span data-key="">Video</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="video">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('ajout_video', $pagesDefaultID) }}" class="nav-link"
+                                    daata-key="">Ajouter une viedo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('liste_video') }}" class="nav-link" data-key=""> Liste des
+                                    videos</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item">
                     <a class="nav-link menu-link" href="#menu" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarForms">
                         <i class="ri-file-list-3-line"></i> <span data-key="">Menu</span>

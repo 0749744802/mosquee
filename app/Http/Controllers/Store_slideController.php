@@ -21,6 +21,7 @@ class Store_slideController extends Controller
         // dd($pages);
         return view('pages.liste_slide', compact( "slides"));
     }
+    
     public function ajout_slide($slideID)
     {
         //$data = Categorie::get();

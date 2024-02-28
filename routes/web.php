@@ -13,6 +13,9 @@ use App\Http\Controllers\Store_serviceController;
 use App\Http\Controllers\Store_blogController;
 use App\Http\Controllers\Store_membreController;
 use App\Http\Controllers\Store_menuController;
+use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\Store_videoController;
+use App\Http\Controllers\Store_logicielController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +31,10 @@ use App\Http\Controllers\Store_menuController;
 
 
 
-Route::get('/', function () {
-    return view('logiciel.pages.accueil');
-});
+
+//lien accueil
+Route::get('/accueil', [AccueilController::class,'get_slide'])->name('accueil');
+Route::get('/', [AccueilController::class,'get_slide']);
 //lien formulaire devis
 Route::get('/devis', function () {
     return view('logiciel.formulaire');
@@ -41,6 +45,8 @@ Route::get('/devis', function () {
 Route::get('/contact', function () {
     return view('logiciel.pages.contact');
 });
+//lien logiciel
+Route::get('/logiciels', [Store_logicielController::class,'get_logiciel'])->name('logiciels');
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', function ()
@@ -68,6 +74,21 @@ Route::middleware('auth')->group(function () {
     Route::get('/liste_service', [Store_serviceController::class,'liste_service'])->name('liste_service');
     Route::post('/store_service', [Store_serviceController::class,'ajout_services'])->name('store_service');
     Route::get('supprimer_service', [Store_serviceController::class,'supprimer_service'])->name('supprimer_service');
+
+
+    //lien video
+    Route::get('/ajout_video/{videoID}', [Store_videoController::class,'ajout_video'])->name('ajout_video');
+    Route::get('/liste_video', [Store_videoController::class,'liste_video'])->name('liste_video');
+    Route::post('/store_video', [Store_videoController::class,'ajout_videos'])->name('store_video');
+    Route::get('supprimer_video', [Store_videoController::class,'supprimer_video'])->name('supprimer_video');
+
+
+
+     //lien logiciel
+     Route::get('/ajout_logiciel/{logicielID}', [Store_logicielController::class,'ajout_logiciel'])->name('ajout_logiciel');
+     Route::get('/liste_logiceil', [Store_logicielController::class,'liste_logiciel'])->name('liste_logiciel');
+     Route::post('/store_logiciel', [Store_logicielController::class,'ajout_logiciels'])->name('store_logiciel');
+     Route::get('supprimer_logiciel', [Store_logicielController::class,'supprimer_logiciel'])->name('supprimer_logiciel');
 
 
     //lien blog

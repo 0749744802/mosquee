@@ -6,14 +6,17 @@
     <!-- =====================================
     ============ Banner Area Start ============
     ====================================== -->
-    <section class="about-page banner-area page-banner-2" style="background-image: url(./logiciel/assets/img/about-banner.png);">
+    @foreach ($slides as $item)
+    <section class="about-page banner-area page-banner-2" style="background-image: url({{ asset('storage/' . $item->image_slide) }});">
         <div class="container">
           <div class="banner-content d-flex justify-content-center flex-column text-center">
-              <h2 class="font-md-60 white text-center">Where Dreamers & Doers</h2>
-              <h4 class="white font-20 font-light text-center font-roboto mt-15">A young and fearless superteam, powered by our ideals</h4>
+              <h2 class="font-md-60 white text-center">{{ $item->titre_slide }}</h2>
+              <h4 class="white font-20 font-light text-center font-roboto mt-15">{{ $item->sous_titre_slide }}</h4>
           </div>
         </div>
       </section>
+    @endforeach
+
     <!-- =====================================
     ============ Banner Area End ============
     ====================================== -->
@@ -24,48 +27,25 @@
     <section class="service-area section-padding">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <div class="service-box text-center px-12 px-lg-40 py-30">
-              <div class="service-icon">
-                <span><i class="far fa-check-square"></i></span>
-                <div class="service-icon-shap">
-                  <img src="./logiciel/assets/img/service-img-shap.png" alt="">
+            @foreach ($services as $item)
+            <div class="col-md-4">
+                <div class="service-box text-center px-12 px-lg-40 py-30">
+                  <div class="service-icon service-icon-2">
+                    <span><img src="{{ asset('storage/' . $item->image_service) }}" alt=""></span>
+                    <div class="service-icon-shap">
+                      
+                    </div>
+                  </div>
+                  <div class="service-content">
+                    <h4>{{ $item->titre_service }}</h4>
+                    <p class="opacity-80 font-14 mt-15">{!! html_entity_decode($item->resume_service) !!}</p>
+
+                  </div>
                 </div>
               </div>
-              <div class="service-content">
-                <h4>Site web</h4>
-                <p class="opacity-80 font-14 mt-15">En cour...</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box text-center px-12 px-lg-40 py-30">
-              <div class="service-icon service-icon-2">
-                <span><i class="far fa-lightbulb"></i></span>
-                <div class="service-icon-shap">
-                  <img src="./logiciel/assets/img/service-img-shap.png" alt="">
-                </div>
-              </div>
-              <div class="service-content">
-                <h4>Logiciel sur mesure</h4>
-                <p class="opacity-80 font-14 mt-15">En cour...</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box text-center px-12 px-lg-40 py-30 ">
-              <div class="service-icon service-icon-3">
-                <span><i class="fas fa-globe"></i></span>
-                <div class="service-icon-shap">
-                  <img src="./logiciel/assets/img/service-img-shap.png" alt="">
-                </div>
-              </div>
-              <div class="service-content">
-                <h4>Assistance</h4>
-                <p class="opacity-80 font-14 mt-15">En cour...</p>
-              </div>
-            </div>
-          </div>
+
+            @endforeach
+
         </div>
       </div>
     </section>
@@ -76,16 +56,20 @@
         <div class="pta-check">
           <div class="container">
             <div class="row">
-              <div class="col-md-6">
-                <div class="pta-box">
-                  <h3 class="white font-medium font-20">Titre de la video</h3>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="pta-btn mt-30 mt-md-0">
-                  <a class="btn btn-blue-3" href="devis">Nous joindre <span><i class="fas fa-caret-right"></i></span></a>
-                </div>
-              </div>
+
+                @foreach ($videos as $item)
+                <div class="col-md-6">
+                    <div class="pta-box">
+                      <h3 class="white font-medium font-20">{{ $item->titre_video }}</h3>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="pta-btn mt-30 mt-md-0">
+                      <a class="btn btn-blue-3" href="devis">Nous joindre <span><i class="fas fa-caret-right"></i></span></a>
+                    </div>
+                  </div>
+                @endforeach
+             
             </div>
           </div>
         </div>
@@ -93,25 +77,28 @@
     <!-- =====================================
     ======== business Area Start ==========
     ====================================== -->
+    @foreach ($videos as $item)
     <section class="video-area section-padding" style="background-image: url(./logiciel/assets/img/video-bg.jpg);">
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-lg-7">
               <div class="video-content">
 
-                <p class="white mt-30 opacity-80 font-300">Descriptife de la video</p>
+                <p class="white mt-30 opacity-80 font-300">{!! $item->resume_video !!}</p>
               </div>
             </div>
             <div class="col-md-4 col-lg-5 justify-content-center">
               <div class="video-icon d-flex justify-content-center align-items-center mt-50 mt-md-0">
-                <a class="d-flex justify-content-center align-items-center video-popup" href="https://www.youtube.com/watch?v=1jCuRGOfrNc">
+                <a class="d-flex justify-content-center align-items-center video-popup" href="{{ $item->lien_video }}">
                   <img src="./logiciel/assets/img/play.svg" alt="">
                 </a>
+                
               </div>
             </div>
           </div>
         </div>
       </section>
+    @endforeach
     <!-- =====================================
     ======== business Area Start ==========
     ====================================== -->
@@ -130,52 +117,30 @@
           <div class="col-md-12 col-lg-7 pl-15 pl-lg-50 pl-xl-100">
             <div class="skill-content mt-30 mt-lg-0">
               <h2 class="font-medium">Nos different logiciel & site developper</h2>
-              <p class="mt-20 opacity-80">description</p>
               <div class="skill-btn mt-30">
-                <a class="btn btn-red" href="">Voir + </a>
+                <a class="btn btn-red" href="logiciels">Voir + </a>
               </div>
             </div>
             <div class="skill-bar mt-50">
 
-                <p class="mb-5">Logiciel ecole</p>
-                <div id="bar1" class="barfiller">
-                    <div class="tipWrap">
-                        <span class="tip">90%</span>
-                    </div>
-                    <span class="fill" data-percentage="90"></span>
-                </div>
+               @foreach ($logiciels as $item)
+              <a href="{{$item->lien_logiciel}}" target="_bank"><p class="mb-5">{{$item->titre_logiciel}}</p></a> 
+               <div id="bar" class="barfiller">
+                   <div class="tipWrap">
+                       <span class="tip">100%</span>
+                   </div>
+                   <span class="fill" data-percentage="100"></span>
+               </div>
+               @endforeach
 
-                <p class="mb-5">Logiciel de stock</p>
-                <div id="bar2" class="barfiller">
-                    <div class="tipWrap">
-                        <span class="tip">95%</span>
-                    </div>
-                    <span class="fill" data-percentage="95"></span>
-                </div>
+               
 
-                <p class="mb-5">Logiciel de vote</p>
-                <div id="bar3" class="barfiller">
-                    <div class="tipWrap">
-                        <span class="tip">80%</span>
-                    </div>
-                    <span class="fill" data-percentage="80"></span>
-                </div>
+               
             </div>
           </div>
         </div>
       </div>
-      <div class="skill-shap skill-shap-left">
-        <img src="./logiciel/assets/img/skill-shap-left.png" alt="">
-      </div>
-      <div class="skill-shap skill-shap-right">
-        <img src="./logiciel/assets/img/skill-shap-right.png" alt="">
-      </div>
-      <div class="skill-shap skill-shap-left-2">
-        <img src="./logiciel/assets/img/skill-shap-left-2.png" alt="">
-      </div>
-      <div class="skill-shap skill-shap-right-2">
-        <img src="./logiciel/assets/img/skill-shap-right-2.png" alt="">
-      </div>
+     
     </section>
     <!-- =====================================
     ======== Skill Area End ==========
@@ -208,7 +173,7 @@
     <!-- =====================================
     ======== Testimonial Area Start ==========
     ====================================== -->
-    <section class="testimonial-area section-padding">
+    <!--<section class="testimonial-area section-padding">
       <div class="container">
         <div class="section-title-center">
           <h2 class="font-medium">Avis de nos clients!!</h2>
@@ -291,7 +256,7 @@
       <div class="testiomnial-shap testiomnial-shap-2">
         <img src="./logiciel/assets/img/testimonial-shap-1.png" alt="">
       </div>
-    </section>
+    </section>-->
     <!-- =====================================
     ======== Testimonial Area End ==========
     ====================================== -->
