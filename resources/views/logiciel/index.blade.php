@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="{{asset("logiciel/assets/css/magnific-popup.css")}}">
   <link rel="stylesheet" href="{{asset("logiciel/assets/css/style.css")}}">
   <link rel="stylesheet" href="{{asset("logiciel/assets/css/responsive.css")}}">
+  <link href="{{asset("assets/plugins/sweetalert2/sweetalert2.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset("assets/plugins/sweetalert/sweetalert.css")}}" rel="stylesheet" type="text/css">
+    <script src="{{ asset("assets/plugins/sweetalert2/sweetalert2.min.js") }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <!-- <div class="loader-bg">
@@ -70,5 +74,7 @@
   <script src="{{asset("logiciel/assets/js/jquery.magnific-popup.min.js")}}"></script>
   <script src="{{asset("logiciel/assets/js/wow.min.js")}}"></script>
   <script src="{{asset("logiciel/assets/js/main.js")}}"></script>
+  <script src="{{asset("assets/plugins/sweetalert/sweetalert.min.js")}}"></script>
+ <script src="{{asset("assets/plugins/sweetalert/jquery.sweet-alert.custom.js")}}"></script>
 </body>
 </html>

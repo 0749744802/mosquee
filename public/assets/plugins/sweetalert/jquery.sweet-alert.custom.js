@@ -1001,6 +1001,75 @@
 
 
 
+
+    $('.supprimer_devis').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, demande de devis supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+
+
+                $.get('supprimer_devis', { id: id }, function () {
+                    $("#listedevis_" + id).hide();
+                });
+
+
+                swal("Supprimé!", "Votre  demande de devis a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+    });
+
+
+
+    $('.supprimer_contact').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, contact supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+
+
+                $.get('supprimer_contact', { id: id }, function () {
+                    $("#listecontact_" + id).hide();
+                });
+
+
+                swal("Supprimé!", "Votre  contact a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+    });
+
+
+
     $('.supprimer_membre').click(function () {
         var id = $(this).attr("id");
         //Parameter

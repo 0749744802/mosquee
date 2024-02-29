@@ -16,6 +16,8 @@ use App\Http\Controllers\Store_menuController;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\Store_videoController;
 use App\Http\Controllers\Store_logicielController;
+use App\Http\Controllers\Store_contactController;
+use App\Http\Controllers\Stotr_devisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,14 +41,23 @@ Route::get('/', [AccueilController::class,'get_slide']);
 Route::get('/devis', function () {
     return view('logiciel.formulaire');
 });
+Route::post('/Stotr_devisController', [Stotr_devisController::class,'ajout_deviss'])->name('Stotr_devisController');
 //lien services
-   Route::get('/services', [Store_serviceController::class,'lien_services'])->name('services');
+   Route::get('/services&id={serviceID}', [Store_serviceController::class,'lien_services'])->name('services');
 //lien contact
 Route::get('/contact', function () {
     return view('logiciel.pages.contact');
 });
 //lien logiciel
 Route::get('/logiciels', [Store_logicielController::class,'get_logiciel'])->name('logiciels');
+
+
+//lien contact
+Route::post('/Store_contactController', [Store_contactController::class,'ajout_contacts'])->name('Store_contactController');
+
+
+
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', function ()
@@ -75,6 +86,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/store_service', [Store_serviceController::class,'ajout_services'])->name('store_service');
     Route::get('supprimer_service', [Store_serviceController::class,'supprimer_service'])->name('supprimer_service');
 
+
+    //lien devis
+    Route::get('supprimer_devis', [Stotr_devisController::class,'supprimer_devis'])->name('supprimer_devis');
+    Route::get('/liste_devis', [Stotr_devisController::class,'liste_devis'])->name('liste_devis');
+
+
+    //lien contact
+    Route::get('supprimer_contact', [Store_contactController::class,'supprimer_contact'])->name('supprimer_contact');
+    Route::get('/liste_contact', [Store_contactController::class,'liste_contact'])->name('liste_contact');
 
     //lien video
     Route::get('/ajout_video/{videoID}', [Store_videoController::class,'ajout_video'])->name('ajout_video');

@@ -1,3 +1,15 @@
+@php
+    $service = (!empty($service))  ? $service : 0;
+    // dd($service);
+    $serviceID = (!empty($service)) ? $service->id : '';
+    $titre_service = (!empty($service)) ? ucfirst($service->titre_service) : '';
+    $resume_service = (!empty($service)) ? ucfirst($service->resume_service) : '';
+    $description_service = (!empty($service)) ? ucfirst($service->description_service) : '';
+    $public_service = (!empty($service)) ? ucfirst($service->public_service) : '';
+    $image_service = (!empty($service)) ? ucfirst($service->image_service) : '';
+
+    // dd($serviceID);
+@endphp
 @extends('logiciel.index')
 @section('titre', 'services')
 @section('content')
@@ -45,15 +57,15 @@
           <div class="row">
             <div class="col-md-12 col-lg-6">
               <div class="manager-content">
-                <h2 class=" font-medium">A focus on what matters</h2>
-                <h4 class="fotn-20 mt-20 font-roboto font-medium line-height-30">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less </h4>
-                <p class="mt-20 opacity-80">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <p class="mt-20 opacity-80">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
+                <h2 class=" font-medium">{{ $titre_service }}</h2>
+
+                <p class="mt-20 opacity-80">{!! $description_service !!} </p>
+
             </div>
             </div>
             <div class="col-md-12 col-lg-6">
               <div class="manager-img mt-30 mt-lg-0">
-                <img src="./logiciel/assets/img/manager-2.jpg" alt="">
+                <img src="{{ asset('storage/' .$image_service) }}" alt="">
               </div>
             </div>
           </div>

@@ -2,6 +2,20 @@
 @section('titre', 'Accuel')
 @section('content')
 <main>
+    @if (session('success'))
+    <script>
+        window.onload=function()
+        {
+            Swal.fire({
+  // position: "top-end",
+   icon: "success",
+   title: "L\'e-mail a été envoyé avec succès !",
+   showConfirmButton: false,
+   timer: 1500
+ });
+        };
+    </script>
+@endif
 
     <!-- =====================================
     ============ Banner Area Start ============
@@ -33,7 +47,7 @@
                   <div class="service-icon service-icon-2">
                     <span><img src="{{ asset('storage/' . $item->image_service) }}" alt=""></span>
                     <div class="service-icon-shap">
-                      
+
                     </div>
                   </div>
                   <div class="service-content">
@@ -69,7 +83,7 @@
                     </div>
                   </div>
                 @endforeach
-             
+
             </div>
           </div>
         </div>
@@ -92,7 +106,7 @@
                 <a class="d-flex justify-content-center align-items-center video-popup" href="{{ $item->lien_video }}">
                   <img src="./logiciel/assets/img/play.svg" alt="">
                 </a>
-                
+
               </div>
             </div>
           </div>
@@ -124,7 +138,7 @@
             <div class="skill-bar mt-50">
 
                @foreach ($logiciels as $item)
-              <a href="{{$item->lien_logiciel}}" target="_bank"><p class="mb-5">{{$item->titre_logiciel}}</p></a> 
+              <a href="{{$item->lien_logiciel}}" target="_bank"><p class="mb-5">{{$item->titre_logiciel}}</p></a>
                <div id="bar" class="barfiller">
                    <div class="tipWrap">
                        <span class="tip">100%</span>
@@ -133,14 +147,14 @@
                </div>
                @endforeach
 
-               
 
-               
+
+
             </div>
           </div>
         </div>
       </div>
-     
+
     </section>
     <!-- =====================================
     ======== Skill Area End ==========
@@ -273,22 +287,46 @@
     ======== Contact Area Start ==========
     ====================================== -->
     <section class="contact-area section-padding">
+
+
+        @if (session('success'))
+                <script>
+                    window.onload=function()
+                    {
+                        Swal.fire({
+              // position: "top-end",
+               icon: "success",
+               title: "L\'e-mail a été envoyé avec succès !",
+               showConfirmButton: false,
+               timer: 1500
+             });
+                    };
+                </script>
+            @endif
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div class="contact-form">
               <h2 class=" font-light white">Nous conctacter</h2>
-              <form class="form mt-20">
-                <div class="row">
+              <form class="form mt-20" action="Store_contactController" method="POST">
+                @csrf
+                <div class="row" >
+
+                    <div class="col-md-6">
+                        <input class="form-input white" type="text" placeholder="Nom & prénoms" name="nom_contact" required>
+                      </div>
+                      <div class="col-md-6">
+                        <input class="form-input white" type="text" placeholder="Contact" name="numero_contact" required>
+                      </div>
                   <div class="col-md-6">
-                    <input class="form-input white" type="text" placeholder="Email">
+                    <input class="form-input white" type="email" placeholder="Email" name="email_contact" required>
                   </div>
                   <div class="col-md-6 mt-30 mt-md-0">
-                    <input class="form-input white" type="text" placeholder="Subject">
+                    <input class="form-input white" type="text" placeholder="Subjet" name="sujet_contact" required>
                   </div>
                 </div>
-                <textarea class="form-input mt-30 white" cols="30" rows="10" placeholder="Message"></textarea>
-                <button class="btn btn-sent mt-20">Send Request</button>
+                <textarea class="form-input mt-30 white" cols="30" rows="10" placeholder="Message" name="message_contact"></textarea>
+                <button class="btn btn-sent mt-20" type="submit">Envoyer</button>
               </form>
             </div>
           </div>

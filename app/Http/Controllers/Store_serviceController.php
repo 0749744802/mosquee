@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 class Store_serviceController extends Controller
 {
     //
-    public function lien_services()
+    public function lien_services($serviceID)
     {
-        return view('logiciel.pages.services');
+        $service = service::find($serviceID);
+        return view('logiciel.pages.services',compact("service"));
     }
     public function liste_service(service $services)
     {
