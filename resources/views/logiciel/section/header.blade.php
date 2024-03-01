@@ -5,7 +5,10 @@
         <div class="col-3 col-lg-2">
           <div class="header-logo">
             <a href="accueil">
-              <img src="./logiciel/assets/img/logo.png" alt="logo">
+                @foreach ($site as $item)
+                <img src="{{ asset('storage/' . $item->logo_site) }}" alt="logo">
+                @endforeach
+              
             </a>
           </div>
         </div>
@@ -20,7 +23,7 @@
               <li class="dropdown"><a href="#">Services <span><i class="fas fa-angle-down"></i></span></a>
                 <ul class="submenu">
                   <li><a href="services&id=2">Developpement</a></li>
-                  <li><a href="services&id=1">Logicieil disponible</a></li>
+                  <li><a href="services&id=1">Logicieil</a></li>
 
                 </ul>
               </li>

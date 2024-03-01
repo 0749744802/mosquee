@@ -20,7 +20,7 @@
     <!-- =====================================
     ============ Banner Area Start ============
     ====================================== -->
-    @foreach ($slides as $item)
+    {{-- @foreach ($slides as $item)
     <section class="about-page banner-area page-banner-2" style="background-image: url({{ asset('storage/' . $item->image_slide) }});">
         <div class="container">
           <div class="banner-content d-flex justify-content-center flex-column text-center">
@@ -29,7 +29,46 @@
           </div>
         </div>
       </section>
-    @endforeach
+    @endforeach --}}
+
+
+
+
+    <section class="banner">
+        <div class="banner-slide carousel owl-carousel" data-nav="false" data-dots='false' data-animateout="animate__fadeOut" data-animatein="animate__fadeIn" data-margin="0" data-smartSpeed="1000" data-autoplay='true' data-items='1'>
+            @foreach ($slides as $item)
+          <div class="banner-slide-item">
+            <div class="banner-area banner-areas" style="background-image: url({{ asset('storage/' . $item->image_slide) }});">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-md-7">
+                    <div class="banner-content d-flex justify-content-center flex-column pt-80">
+                      <h2 class="font-lg-60  white  mt-mb-0">{{ $item->titre_slide }}</h2>
+                      <p class="white  opacity-80">{{ $item->sous_titre_slide }}</p>
+                     
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-5">
+                    <div class="banner-form d-flex justify-content-center flex-column z-99 pt-30 animate__animated animate__fadeInUp">
+                      <div class="video-icon  animate__animated animate__fadeInUp">
+                        @foreach ($videos as $item)
+                        <a class="d-flex justify-content-center align-items-center video-popup" href="{{ $item->lien_video }}">
+                            <img src="./logiciel/assets/img/play.svg" alt="">
+                          </a>
+                        @endforeach
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+        <div class="banner-shap">
+          <img src="./assets/img/banner-shap.png" alt="">
+        </div>
+      </section>
 
     <!-- =====================================
     ============ Banner Area End ============
@@ -40,7 +79,9 @@
     ====================================== -->
     <section class="service-area section-padding">
       <div class="container">
+        <center><h2>Nos services</h2></center>
         <div class="row">
+            
             @foreach ($services as $item)
             <div class="col-md-4">
                 <div class="service-box text-center px-12 px-lg-40 py-30">

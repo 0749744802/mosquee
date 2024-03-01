@@ -1070,6 +1070,41 @@
 
 
 
+
+    $('.supprimer_site').click(function () {
+        var id = $(this).attr("id");
+        //Parameter
+
+        swal({
+            title: "Etes vous sûr de votre action?",
+            text: "La suppresion est irréverssible!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Oui, information du site supprimée!",
+            cancelButtonText: "Non, Annuler!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+
+
+                $.get('supprimer_site', { id: id }, function () {
+                    $("#listesite_" + id).hide();
+                });
+
+
+                swal("Supprimé!", "Votre  information du site a été supprimé correctement.", "success");
+            } else {
+                swal("Annulé", "Suppression annulée", "error");
+            }
+        });
+
+
+    });
+
+
+
     $('.supprimer_membre').click(function () {
         var id = $(this).attr("id");
         //Parameter

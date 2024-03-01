@@ -12,7 +12,7 @@
     <section class="price-banner banner-area" style="background-image: url(./logiciel/assets/img/price-bg.png);">
         <div class="container">
           <div class="banner-content d-flex justify-content-center flex-column">
-              <h2 class="font-md-60 white">Contact us</h2>
+              <h2 class="font-md-60 white">Nous contacter</h2>
 
           </div>
         </div>
@@ -39,13 +39,19 @@
             </div>
             <div class="contact-address mt-30">
               <h3 class="font-24 font-roboto font-medium">Addresse</h3>
-              <p class="mt-10 opacity-80">535 Talbot Street (at Kent Street) London,
-                Ontario</p>
+              <p class="mt-10 opacity-80">Côte d'ivoire Abidjan,
+                Cocody Angré, cité belle fleur</p>
             </div>
             <div class="contact-phone mt-20">
               <h3 class="font-24 font-roboto font-medium">telephone</h3>
-              <p class="mt-10">(+880) 616481</p>
-              <p class="mt-10 opacity-80">This is no easy task – often compliance tends to suffer the faster you move in your organization</p>
+              @foreach ($site as $item)
+              <p class="mt-10">{{ $item->numero1_site }}</p>
+              @endforeach
+             
+              @foreach ($site as $item)
+              <p class="mt-10 opacity-80">{!! $item->description_site !!}</p>
+              @endforeach
+              
 
             </div>
           </div>

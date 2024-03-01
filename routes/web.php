@@ -18,6 +18,7 @@ use App\Http\Controllers\Store_videoController;
 use App\Http\Controllers\Store_logicielController;
 use App\Http\Controllers\Store_contactController;
 use App\Http\Controllers\Stotr_devisController;
+use App\Http\Controllers\Store_siteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +78,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/liste_slide', [Store_slideController::class,'liste_slide'])->name('liste_slide');
     Route::post('/store_slide', [Store_slideController::class,'ajout_slides'])->name('store_slide');
     Route::get('supprimer_slide', [Store_slideController::class,'supprimer_slide'])->name('supprimer_slide');
+
+
+    //lien site
+    Route::get('/ajout_site/{siteID}', [Store_siteController::class,'ajout_site'])->name('ajout_site');
+    Route::get('/liste_site', [Store_siteController::class,'liste_site'])->name('liste_site');
+    Route::post('/store_site', [Store_siteController::class,'ajout_sites'])->name('store_site');
+    Route::get('supprimer_site', [Store_siteController::class,'supprimer_site'])->name('supprimer_site');
 
 
 

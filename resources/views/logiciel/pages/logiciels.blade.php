@@ -9,11 +9,11 @@
     <!-- =====================================
     ============ Page Banner Area Start ============
     ====================================== -->
-    <section class="banner-area page-banner-2" style="background-image: url(./logiciel/assets/img/casess-banner.png);">
+    <section class="price-banner banner-area" style="background-image: url(./logiciel/assets/img/price-bg.png);">
         <div class="container">
-          <div class="banner-content d-flex justify-content-center flex-column text-center">
-              <h2 class="font-md-60 white text-center">Cases</h2>
-              <h4 class="white font-20 font-light text-center font-roboto opacity-80 mt-15">Some of our most loved Case Study</h4>
+          <div class="banner-content d-flex justify-content-center flex-column">
+              <h2 class="font-md-60 white">Nos Logiciels</h2>
+
           </div>
         </div>
     </section>
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="cases-img">
-                        <img src="{{ asset('storage/' . $item->image_logiciel) }}" alt="">
+                        <img src="{{ asset('storage/' . $item->image_logiciel) }}"  alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -43,15 +43,23 @@
                         <p class="mt-20 opacity-80">{!! $item->description_logiciel !!}</p>
                         <div class="cases-btn mt-20">
                             <a class="btn btn-overlay-2" href="{{ $item->lien_logiciel }} " target="_bank">Voir la demo</a>
+                           
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
            @endforeach
             
-            
+         
+           <div class="pagination d-flex justify-content-center">
+            {{ $logiciels->links('pagination::bootstrap-5') }}
         </div>
+        
+               
+        </div>
+        
     </section>
     <!-- =====================================
     ======== Cases Page Area End ==========

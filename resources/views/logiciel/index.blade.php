@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logiciel|@yield('titre')</title>
+  @foreach ($site as $item)
+  <title>{{ $item->nom_site }}|@yield('titre')</title> 
+  @endforeach
+ 
+  @foreach ($site as $item)
+  <link rel="icon" href="{{ asset('storage/' . $item->logo_site) }}"> 
+  @endforeach
+  
   <link rel="stylesheet" href="{{asset("logiciel/assets/css/owl.carousel.min.css")}}">
   <link rel="stylesheet" href="{{asset("logiciel/assets/css/animate.css")}}">
   <link rel="stylesheet" href="{{asset("logiciel/assets/css/fontawesome.min.css")}}">
@@ -13,6 +20,7 @@
   <link rel="stylesheet" href="{{asset("logiciel/assets/css/style.css")}}">
   <link rel="stylesheet" href="{{asset("logiciel/assets/css/responsive.css")}}">
   <link href="{{asset("assets/plugins/sweetalert2/sweetalert2.min.css")}}" rel="stylesheet" type="text/css" />
+  
     <link href="{{asset("assets/plugins/sweetalert/sweetalert.css")}}" rel="stylesheet" type="text/css">
     <script src="{{ asset("assets/plugins/sweetalert2/sweetalert2.min.js") }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

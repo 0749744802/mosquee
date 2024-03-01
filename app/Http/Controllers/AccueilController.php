@@ -16,7 +16,7 @@ class AccueilController extends Controller
        // $data = Categorie::get();
 
         //
-         $slides = Slide::orderby('id','desc')->take(1)->get();
+         $slides = Slide::orderby('id','desc')->take(3)->get();
          $services = Service::orderby('id','asc')->take(6)->get();
          $videos = Video::orderby('id','desc')->take(1)->get();
          $logiciels = Logiciel::orderby('id','desc')->take(5)->get();

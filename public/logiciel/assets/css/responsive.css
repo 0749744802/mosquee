@@ -661,6 +661,7 @@
     .cases-page .cases-img {
         transform: scale(1.15);
         margin-left: 85px;
+        width: 225px;
     }
     .cases-page .cases-img img {
         width: auto;

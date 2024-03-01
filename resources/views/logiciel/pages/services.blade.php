@@ -21,13 +21,13 @@
     <!-- =====================================
     ============ Page Banner Area Start ============
     ====================================== -->
-    <section class="about-page banner-area page-banner-2" style="background-image: url(./logiciel/assets/img/about-banner.png);">
-      <div class="container">
-        <div class="banner-content d-flex justify-content-center flex-column text-center">
-            <h2 class="font-md-60 white text-center">Where Dreamers & Doers</h2>
-            <h4 class="white font-20 font-light text-center font-roboto mt-15">A young and fearless superteam, powered by our ideals</h4>
+    <section class="price-banner banner-area" style="background-image: url(./logiciel/assets/img/price-bg.png);">
+        <div class="container">
+          <div class="banner-content d-flex justify-content-center flex-column">
+              <h2 class="font-md-60 white">Nos services</h2>
+
+          </div>
         </div>
-      </div>
     </section>
     <!-- =====================================
     ============ Page Banner Area End ============

@@ -33,7 +33,7 @@ class Store_logicielController extends Controller
      }
      public function get_logiciel()
      {
-         $logiciels = Logiciel::get();
+         $logiciels = Logiciel::paginate(5);
 
 
          //

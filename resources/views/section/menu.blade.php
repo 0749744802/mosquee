@@ -7,19 +7,27 @@
          <!-- Dark Logo-->
          <a href="index.html" class="logo logo-dark">
              <span class="logo-sm">
-                 <img src="{{asset('assets/images/logo-sm.png')}}" alt="" height="22">
+                @foreach ($site as $item)
+                <img src="{{ asset('storage/' . $item->logo_site) }}" alt="" height="22"> 
+                @endforeach
              </span>
              <span class="logo-lg">
-                 <img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="17">
+                @foreach ($site as $item)
+                <img src="{{ asset('storage/' . $item->logo_site) }}" alt="" height="17"> 
+                @endforeach
              </span>
          </a>
          <!-- Light Logo-->
          <a href="index.html" class="logo logo-light">
              <span class="logo-sm">
-                 <img src="{{asset('assets/images/logo-sm.png')}}" alt="" height="22">
+                @foreach ($site as $item)
+                <img src="{{ asset('storage/' . $item->logo_site) }}" alt="" height="22"> 
+                @endforeach
              </span>
              <span class="logo-lg">
-                 <img src="{{asset('assets/images/logo-light.png')}}" alt="" height="17">
+                @foreach ($site as $item)
+                <img src="{{ asset('storage/' . $item->logo_site) }}" alt="" height="17"> 
+                @endforeach
              </span>
          </a>
          <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -76,7 +84,24 @@
 
 
 
+                 <li class="nav-item">
+                    <a class="nav-link menu-link" href="#site" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarForms">
+                        <i class="ri-file-list-3-line"></i> <span data-key="">Site</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="site">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('ajout_site', $pagesDefaultID) }}" class="nav-link"
+                                    daata-key="">Ajouter les informations du site</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('liste_site') }}" class="nav-link" data-key=""> Liste des information du site</a>
+                            </li>
 
+                        </ul>
+                    </div>
+                </li>
 
 
 
@@ -330,7 +355,7 @@
                     </div>
                 </li>
 
-                
+
 
              </ul>
          </div>
