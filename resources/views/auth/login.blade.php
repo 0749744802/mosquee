@@ -108,7 +108,7 @@
                         <!-- end card -->
 
                         <div class="mt-4 text-center">
-                            <p class="mb-0">Vous avez pas de compte ? <a href="auth-signup-basic.html" class="fw-semibold text-primary text-decoration-underline"> Inscription</a> </p>
+                            <p class="mb-0">Vous avez pas de compte ? <a href="register" class="fw-semibold text-primary text-decoration-underline"> Inscription</a> </p>
                         </div>
 
                     </div>

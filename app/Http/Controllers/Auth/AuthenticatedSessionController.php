@@ -43,7 +43,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('pages.deconnexion');
+        return redirect('deconnexion');
     }
 
 }
