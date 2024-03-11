@@ -67,7 +67,7 @@
                                 <h5>Vous être déconnecter</h5>
                                 <p class="text-muted">Merci de vous connectez à <span class="fw-semibold"> la page</span> d'administration</p>
                                 <div class="mt-4">
-                                    <a href="auth-signin-basic.html" class="btn btn-success w-100">Connexion</a>
+                                    <a href="login" class="btn btn-success w-100">Connexion</a>
                                 </div>
                             </div>
                         </div>
