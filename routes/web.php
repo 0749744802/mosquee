@@ -19,6 +19,7 @@ use App\Http\Controllers\Store_logicielController;
 use App\Http\Controllers\Store_contactController;
 use App\Http\Controllers\Stotr_devisController;
 use App\Http\Controllers\Store_siteController;
+use App\Http\Controllers\Store_deconnexionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ Route::get('/logiciels', [Store_logicielController::class,'get_logiciel'])->name
 Route::post('/Store_contactController', [Store_contactController::class,'ajout_contacts'])->name('Store_contactController');
 
 
+//lien deconnexion
+
+Route::get('/deconnexion', [Store_deconnexionController::class,'deconnexion'])->name('deconnexion');
 
 
 Route::middleware('auth')->group(function () {
