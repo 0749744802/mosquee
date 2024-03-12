@@ -7,7 +7,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Http\Controllers\Store_siteController;
-
+use App\Models\Devi;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,16 +27,18 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    
+
     {
         Paginator::useBootstrap();
         //affichage du dernier element de la table site
         $sites= Site::orderby('id','desc')->take(1)->get();
-       view()->composer('*', function ($view) use($sites) {
+        $count_devis = Devi::count();
+       view()->composer('*', function ($view) use($sites,$count_devis) {
         $view->with([
-            'site'=> $sites
+            'site'=> $sites,
+            'count_devi'=>$count_devis
         ]);
-          
+
        });
     }
 }
