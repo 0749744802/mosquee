@@ -1,0 +1,46 @@
+/*
+Template Name: Innov Html Template
+Author       : Template_mr
+Version      : 1.0
+*/
+
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - Default css
+*  2.0 - Header area
+*  3.0 - Banner area
+*  4.0 - Service area
+*  5.0 - Business area
+*  6.0 - Skill area
+*  7.0 - Creative area
+*  8.0 - Manager area
+*  9.0 - Pta area
+*  10.0 - Video area
+*  11.0 - Portfolio area
+*  12.0 - Process area
+*  13.0 - Testimonial area
+*  14.0 - Count area
+*  15.0 - Contact area
+*/
+
+//@forward 'Editor';
+@import 'utilities/variables';
+@import 'utilities/mixins';
+
+//@forward 'Editor';
+@import 'editor';
+
+//@forward 'Layout';
+@import 'layout/grid';
+@import 'layout/header';
+
+//@forward 'Core';
+@import 'core/core';
+
+//@forward 'Pages';
+@import 'pages/pages';
+
+//@forward 'Layout';
+@import 'layout/sidebar';
+@import 'layout/footer';

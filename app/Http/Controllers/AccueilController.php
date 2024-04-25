@@ -25,7 +25,7 @@ class AccueilController extends Controller
 
         // Debug
         // dd($pages);
-        return view('logiciel.pages.accueil', compact( "slides","services","videos","logiciels"));
+        return view('mosquee.pages.accueil', compact( "slides","services","videos","logiciels"));
     }
     public function get_accueil(slide $slide)
     {
@@ -38,6 +38,6 @@ class AccueilController extends Controller
 
         // Debug
         // dd($pages);
-        return view('logiciel.pages.accueil');
+        return view('mosquee.pages.accueil');
     }
 }
