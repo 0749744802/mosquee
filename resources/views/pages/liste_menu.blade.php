@@ -1,6 +1,7 @@
 @extends('index')
 @section('titre', 'liste des menus')
 @section('content')
+@include('pages.modale_liste_menu_principale')
 
     <div class="page-content">
         <div class="container-fluid">
@@ -30,7 +31,10 @@
                     <div class="card">
                         <div class="card-header">
                             <h5 class="card-title mb-0">Listes des menus</h5>
-
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#liste_menu_principale">
+                            Liste des menu principaux
+                        </button>
                         </div>
 
                         <div class="card-body">

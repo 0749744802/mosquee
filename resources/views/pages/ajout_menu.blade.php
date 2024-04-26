@@ -1,15 +1,17 @@
 @extends('index')
 @section('titre', 'ajoute de Menu')
 @section('content')
+@include('pages.modal_menu')
 <div class="page-content">
         @php
     $menu = (!empty($menu))  ? $menu : 0;
     // dd($Menu);
     $menuID = (!empty($menu)) ? $menu->id : '';
-    $principale_menu = (!empty($menu)) ? ucfirst($menu->principale_menu) : '';
+    $menu_principale_id = (!empty($menu)) ? ucfirst($menu->menu_principale_id) : '';
     $sous_menu = (!empty($menu)) ? ucfirst($menu->sous_menu) : '';
     $ordre_menu = (!empty($menu)) ? ucfirst($menu->ordre_menu) : '';
     $public_menu = (!empty($menu)) ? ucfirst($menu->public_menu) : '';
+    $lien_menu = (!empty($menu)) ? ucfirst($menu->lien_menu) : '';
 
 
     // dd($MenuID);
@@ -50,6 +52,11 @@
 
 
                                     <!-- categorie Menu modals -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#menu_principale">
+                                    Ajouter un menu principal
+                                </button>
+
 
                                 </div>
                             </div>
@@ -65,12 +72,12 @@
                                         <div class="col-xxl-6 col-md-6">
                                             <div>
                                                 <label for="basiInput" class="form-label">Principale Menu</label>
-                                                <select class="js-example-basic-single" name="principale_menu">
+                                                <select class="js-example-basic-single" name="menu_principale_id">
                                                     <option value=""></option>
                                                     @foreach ($data as $item)
                                                     <option value="{{ $item->id }}"
-                                                        {{ $item->id==$principale_menu? "selected":"" }}>
-                                                        {{ $item->sous_menu }}
+                                                        {{ $item->id==$menu_principale_id? "selected":"" }}>
+                                                        {{ $item->titre_menu_principale }}
                                                     </option>
                                                     @endforeach
 
@@ -88,14 +95,22 @@
                                         </div>
                                         <!--end col-->
 
-                                        <div class="col-xxl-6 col-md-6">
+                                        <div class="col-xxl-4 col-md-4">
                                             <div>
                                                 <label for="basiInput" class="form-label">Ordre Menu</label>
                                                 <input type="text" class="form-control" id="basiInput" name="ordre_menu" value="{{ $ordre_menu }}">
                                             </div>
                                         </div>
 
-                                        <div class="col-xxl-6 col-md-6">
+
+                                        <div class="col-xxl-4 col-md-4">
+                                            <div>
+                                                <label for="basiInput" class="form-label">Lien Menu</label>
+                                                <input type="text" class="form-control" id="basiInput" name="lien_menu" value="{{ $lien_menu }}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xxl-4 col-md-4">
                                             <label class="form-check-label" for="customSwitchsizelg">Rendre
                                                 publique</label>
                                             <div class="form-check form-switch form-switch-lg" dir="ltr">

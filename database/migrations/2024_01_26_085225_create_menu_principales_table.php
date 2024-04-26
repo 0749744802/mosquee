@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('menu_principales', function (Blueprint $table) {
             $table->id();
-             // Set foreign key constraints
-             $table->unsignedBigInteger('menu_principale_id');
-             $table->foreign('menu_principale_id')->references('id')->on('menu_principales');
-            $table->string("sous_menu")->nullable();
-            $table->string("ordre_menu")->nullable();
-            $table->string("public_menu")->nullable();
+            $table->string("titre_menu_principale")->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('menu_principales');
     }
 };

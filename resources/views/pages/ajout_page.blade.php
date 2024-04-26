@@ -9,6 +9,7 @@
     $public = (!empty($page)) ? ucfirst($page->public) : '';
     $categorie_id_page = (!empty($page)) ? ucfirst($page->categorie_id) : '';
     $image = (!empty($page)) ? ucfirst($page->image) : '';
+    $lien_page = (!empty($page)) ? ucfirst($page->lien_page) : '';
 
     // dd($pageID);
 @endphp
@@ -123,14 +124,14 @@
                                     @csrf
                                     <div class="row gy-4">
 
-                                        <div class="col-xxl-3 col-md-4">
+                                        <div class="col-xxl-3 col-md-3">
                                             <div>
                                                 <label for="basiInput" class="form-label">Titre de la page</label>
                                                 <input type="text" class="form-control" id="basiInput" name="titre_page" value="{{ $titre_page }}">
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-4 col-md-4">
+                                        <div class="col-xxl-3 col-md-3">
                                             <div>
                                                 <label for="labelInput" class="form-label">Categorie page</label>
                                                 <select class="js-example-basic-single" name="categorie_page_id">
@@ -144,7 +145,7 @@
                                             </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-xxl-4 col-md-4">
+                                        <div class="col-xxl-3 col-md-3">
                                             <label class="form-check-label" for="customSwitchsizelg">Rendre
                                                 publique{{ $public }}</label>
                                             <div class="form-check form-switch form-switch-lg" dir="ltr">
@@ -152,6 +153,12 @@
                                                     <label for="switch3" data-on-label="Oui"
                                                            data-off-label="Non"></label>
 
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-3">
+                                            <div>
+                                                <label for="basiInput" class="form-label">Lien de la page</label>
+                                                <input type="text" class="form-control" id="basiInput" name="lien_page" value="{{ $lien_page }}">
                                             </div>
                                         </div>
                                         <!--end col-->

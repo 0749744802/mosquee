@@ -141,8 +141,11 @@ Route::middleware('auth')->group(function () {
      //lien memu
      Route::get('/ajout_menu/{menuID}', [Store_menuController::class,'ajout_menu'])->name('ajout_menu');
      Route::get('/liste_menu', [Store_menuController::class,'liste_menu'])->name('liste_menu');
+     Route::get('/liste_menu', [Store_menuController::class,'liste_menu_principale'])->name('liste_menu');
      Route::post('/store_menu', [Store_menuController::class,'ajout_menus'])->name('store_menu');
+     Route::post('/store_menu_principale', [Store_menuController::class,'ajout_menu_principale'])->name('store_menu_principale');
      Route::get('supprimer_menu', [Store_menuController::class,'supprimer_menu'])->name('supprimer_menu');
+     Route::get('supprimer_menu_principale', [Store_menuController::class,'supprimer_menu_principale'])->name('supprimer_menu_principale');
 
 
     //lien produit

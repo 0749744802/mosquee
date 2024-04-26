@@ -17,6 +17,7 @@ class Page extends Model
         'resume_page',
         'description_page',
         'image',
+        'lien_page',
     ];
 
 

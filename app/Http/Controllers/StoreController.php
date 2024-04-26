@@ -35,7 +35,8 @@ class StoreController extends Controller
                     'public' => $request->public,
                     'resume_page' => $request->resume_page,
                     'description_page' => $request->description_page,
-                    'image' => $filename
+                    'image' => $filename,
+                    'lien_page' => $request->lien_page
                 ]
             );
         }
@@ -48,7 +49,8 @@ class StoreController extends Controller
                     'categorie_id' => $request->categorie_page_id,
                     'public' => $request->public,
                     'resume_page' => $request->resume_page,
-                    'description_page' => $request->description_page
+                    'description_page' => $request->description_page,
+                    'lien_page' => $request->lien_page
                 ]
             );
         }
